@@ -10,7 +10,8 @@
 *.pot
 *.swp
 # Folders?
-# idea/* 
+.idea/*
+*.idea
 # build/*
 
 # Packages #
