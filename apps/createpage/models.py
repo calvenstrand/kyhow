@@ -23,7 +23,7 @@ class Class(models.Model):
 class Education(models.Model):
     name = models.CharField(max_length=60)
     description = models.CharField(max_length=5000, blank=True)
-    companys = models.ManyToManyField('Company', blank=True)
+    companies = models.ManyToManyField('Company', blank=True)
     
     def __unicode__(self):
         return self.name
@@ -44,7 +44,7 @@ class Company(models.Model):
 class Contact_person(models.Model):
     first_name = models.CharField(max_length=60)
     last_name = models.CharField(max_length=60)
-    titel = models.CharField(max_length=200, blank=True)
+    title = models.CharField(max_length=200, blank=True)
     phone_number = models.IntegerField(blank=True)
     email = models.EmailField(blank=True)
     description = models.CharField(max_length=5000, blank=True)
