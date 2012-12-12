@@ -1,25 +1,62 @@
 {% extends "base.html" %}
+{% block scripts %}
+    <script type="text/javascript" src="/static/js/student/student.js"></script>
+{% endblock %}
 {% block content %}
     {% if student %}
         <h5>{{ student.name }}</h5>
+        <form id="editStudentForm" action="" method="post">
+            <table>
+                <tr>
+                    <td>Namn</td>
+                    <td><input type="text" value="{{ student.name }}" disabled="disabled" /></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input type="text" value="{{ student.email }}" disabled="disabled" /></td>
+                </tr>
+                <tr>
+                    <td>Telnr</td>
+                    <td><input type="text" value="{{ student.phonenummber }}" disabled="disabled" /></td>
+                </tr>
+                <tr>
+                    <td>Adress</td>
+                    <td><input type="text" value="{{ student.address }}" disabled="disabled" /></td>
+                </tr>
+            </table>
+        <h5>Kurs</h5>
         <table>
             <tr>
-                <td>Namn</td>
-                <td><input type="text" value="{{ student.name }}" /></td>
+                <th>Namn</th>
+                <th>Företag</th>
+                <th>Företagskontakt</th>
+                <th>Framsteg</th>
             </tr>
-            <tr>
-                <td>Email</td>
-                <td><input type="text" value="{{ student.email }}" /></td>
-            </tr>
-            <tr>
-                <td>Telnr</td>
-                <td><input type="text" value="{{ student.phonenummber }}" /></td>
-            </tr>
-            <tr>
-                <td>Adress</td>
-                <td><input type="text" value="{{ student.address }}" /></td>
-            </tr>
+            {% for item in student.course.all %}
+                <tr>
+                    <td>{{ item.name }}</td>
+                    <td>
+                        <select disabled="disabled">
+                            {% for item in company_list %}
+                                <option>{{ item.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </td>
+                    <td>
+                        <select disabled="disabled">
+                            {% for item in contact_persons %}
+                                <option>{{ item.first_name }} {{ item.last_name }}</option>
+                            {% endfor %}
+                        </select>
+                    <td>
+                    <td>{{ item.descrition }}</td>
+                </tr>
+            {% endfor %}
         </table>
+        <button class="btn" id="edit" style="display:block">Redigera</button>
+        <button class="btn btn-primary" id="save" type="submit" style="display:none">Spara</button>
+        <button class="btn" id="cancel" style="display:none">Avbryt</button>
+        </form>
     {% else %}
         <p>Something went terribly wrong...</p>
     {% endif %}

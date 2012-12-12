@@ -1,23 +1,24 @@
-# Create your views here.
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-from apps.createpage.models import Student, Course
+from apps.createpage.models import Student, Company, Contact_person
 
 def detailed_student(request, student_id):
     print student_id
-    #try:
-    student_info = Student.objects.get(pk=student_id)
-    #except Student.DoesNotExist:
-    #    return HttpResponse('Not found.')
+    try:
+        student_info = Student.objects.get(pk=student_id)
+    except Student.DoesNotExist:
+        return HttpResponse('Not found.')
 
-    return render_to_response("student/detailed_student.html",
-        {'student': student_info},
-        #{'course': course_info},
-        #context_instance=RequestContext(request)
-    )
+    contact_persons = Contact_person.objects.all()
 
-    # course_info = Course.objects.get(pk=student_id)
+    company_list = Company.objects.all()
+
+    return render_to_response("student/detailed_student.html", {
+        'student': student_info,
+        'company_list': company_list,
+        'contact_persons': contact_persons
+    }, context_instance=RequestContext(request))
 
 
 
