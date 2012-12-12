@@ -27,12 +27,14 @@
 					<div class="imgresp">
 						<img src="{{ STATIC_URL }}img/kyh.png" style="margin-top:20px;">
 					</div>
+                    {% if is_logged_in %}
 					<ul class="nav nav-tabs nav-stacked main-menu">
 						<li><a href="#"><i class="icon-list-alt icon-white"></i><span class="hidden-tablet"> Klasser</span></a></li>
 						<li><a href="#"><i class="icon-briefcase icon-white"></i><span class="hidden-tablet"> Företag</span></a></li>
 						<li><a href="#"><i class="icon-edit icon-white"></i><span class="hidden-tablet"> Skapa</span></a></li>
 						<li><a href="#"><i class="icon-lock icon-white"></i><span class="hidden-tablet"> Logga ut</span></a></li>
 					</ul>
+                    {% endif %}
 				</div><!--/.well -->
 			</div><!--/span-->
 			<!-- end: Main Menu -->
