@@ -7,5 +7,5 @@ admin.autodiscover()
 urlpatterns = patterns('',
     url(r'^$', 'apps.login.views.index'),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^company/$', 'apps.companyinfo.views.companyInfo'),
+    url(r'^company/(?P<company_id>\d+)$', 'apps.companyinfo.views.companyInfo'),
 )
