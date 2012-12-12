@@ -6,7 +6,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$', 'apps.login.views.index'),
-    url(r'^student/$', 'apps.student.views.detailed_student'),
+    url(r'^student/(?P<student_id>\d+)/$', 'apps.student.views.detailed_student'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^company/(?P<company_id>\d+)$', 'apps.companyinfo.views.companyInfo'),
 )
