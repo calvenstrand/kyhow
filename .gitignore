@@ -44,3 +44,7 @@
 # Settings #
 ############
 # kyhow/settings.py
+
+# Other files #
+##############
+*.komodoproject
