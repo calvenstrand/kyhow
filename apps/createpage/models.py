@@ -6,14 +6,14 @@ class Student(models.Model):
     email = models.EmailField(blank=True)
     address = models.CharField(max_length= 255, blank=True)
     phone_number = models.IntegerField(blank=True)
-    class_id = models.ForeignKey('Class')
+    schoolclass_id = models.ForeignKey('Schoolclass')
     course = models.ManyToManyField('Course', blank=True)
     
     def __unicode__(self):
         return self.name
 
 
-class Class(models.Model):
+class Schoolclass(models.Model):
     name = models.CharField(max_length=60)
     education_id = models.ForeignKey('Education')
     
