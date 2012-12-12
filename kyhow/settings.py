@@ -100,10 +100,10 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'KYHOW.urls'
+ROOT_URLCONF = 'kyhow.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'KYHOW.wsgi.application'
+# WSGI_APPLICATION = 'KYHOW.wsgi.application'
 
 TEMPLATE_DIRS = (
     '%s/../templates' % PROJECT_ROOT,
