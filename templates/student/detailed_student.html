@@ -1,4 +1,26 @@
 {% extends "base.html" %}
 {% block content %}
-<p>HEJHEJHEJ</p>
+    {% if student %}
+        <h5>{{ student.name }}</h5>
+        <table>
+            <tr>
+                <td>Namn</td>
+                <td><input type="text" value="{{ student.name }}" /></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="text" value="{{ student.email }}" /></td>
+            </tr>
+            <tr>
+                <td>Telnr</td>
+                <td><input type="text" value="{{ student.phonenummber }}" /></td>
+            </tr>
+            <tr>
+                <td>Adress</td>
+                <td><input type="text" value="{{ student.address }}" /></td>
+            </tr>
+        </table>
+    {% else %}
+        <p>Something went terribly wrong...</p>
+    {% endif %}
 {% endblock %}
