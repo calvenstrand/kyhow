@@ -2,40 +2,35 @@
 
 {% block content %}
 
+    <ul class="thumbnails">
+        <form action="/company/{{ company.id }}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <table>
+                {{ companyform.as_table }}
+            </table>
+            <button type="submit" class="btn btn-primary">KLICKA PA MIG</button>
+        </form>
         {% if contactperson_list %}
-            <h1> nyh</h1>
-
-            <ul class="thumbnails">
-
-                {% for ad in contactperson_list %}
-                    <li class="span4">
-                        <div class="thumbnail">
-                            <p>{{ ad.id }}</p>
-                            <p>{{ ad.address }}</p>
-                            <p>{{ ad.phone_number }}</p>
-                            <p>{{ ad.email }}</p>
-                            <p>{{ ad.website }}</p>
-                            <p>{{ ad.descrition }}</p>
-
-                            <h3>{{ ad.title }}</h3>
-                            <p><i class="icon-list"></i> {{ad.description}}</p>
-
-
-                        </div>
-                    </li>
-                {% endfor %}
-
-                <form action="/company/{{ company.id }}" method="post" enctype="multipart/form-data">
-                {% csrf_token %}
-                <table>
-                    {{ companyform.as_table }}
-                </table>
-                    <button type="submit" class="btn btn-primary">KLICKA PA MIG</button>
-                </form>
-            </ul>
+            <li class="span4">
+                <div class="thumbnail">
+                    <table>
+                    <tr>
+                        <td>Namn</td><td>Titel</td><td>telnr</td><td>email</td><td>description</td>
+                    </tr>
+                    {% for person in contactperson_list %}
+                        <tr>
+                            <td>{{ person.first_name}} {{ person.last_name }}</td>
+                            <td>{{ person.title }}</td>
+                            <td>{{ person.phone_number }}</td>
+                            <td>{{ person.email }}</td>
+                            <td>{{ person.description }}</td>
+                        </tr>
+                    {% endfor %}
+                    </table>
+                </div>
+            </li>
         {% else %}
-            <p>No ads are available.</p>
-
+            <p>No smthn wrongz.</p>
         {% endif %}
-
+    </ul>
 {% endblock %}
