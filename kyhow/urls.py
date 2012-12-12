@@ -10,4 +10,5 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'company', 'apps.companylist.views.companylist'),
     url(r'^company/(?P<company_id>\d+)$', 'apps.companyinfo.views.companyInfo'),
+    url(r'^createpage/', 'apps.createpage.views.createpage'),
 )
