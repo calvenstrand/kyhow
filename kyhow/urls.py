@@ -8,6 +8,7 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'kyhow.views.home', name='home'),
     # url(r'^kyhow/', include('kyhow.foo.urls')),
+    url(r'^student/$', 'apps.student.views.detailed_student'),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
