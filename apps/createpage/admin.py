@@ -1,5 +1,5 @@
 from django.contrib import admin
-from apps.models import Student, Class, Education, Company, Contact_person, Tag, Course, Step, Participate, Participate_Step
+from models import Student, Class, Education, Company, Contact_person, Tag, Course, Step, Participate, Participate_Step
 
 admin.site.register(Student)
 admin.site.register(Class)
