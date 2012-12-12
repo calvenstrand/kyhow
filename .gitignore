@@ -44,3 +44,7 @@
 # Settings #
 ############
 # kyhow/settings.py
+
+# Database file #
+#################
+databas_kyh.db
