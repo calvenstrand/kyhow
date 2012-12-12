@@ -5,11 +5,7 @@ class CompanyForm(ModelForm):
         model = Company
         exclude = ('id')
         widgets = {
-            'descrition': Textarea(attrs={'cols': 40, 'rows': 5}),
+            'description': Textarea(attrs={'cols': 40, 'rows': 5, 'class': 'descr'}),
             }
 
-class TagForm(ModelForm):
-    class Meta:
-        model = Tag
-        exclude = ('id')
-        widgets = {}
+

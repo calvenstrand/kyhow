@@ -10,35 +10,25 @@ from apps.companyinfo.forms import CompanyForm
 
 def companyInfo(request, company_id):
     company_id_chosen = company_id
-
+    a = get_object_or_404(Company, pk=company_id_chosen)
+    contactperson_list = Contact_person.objects.filter(company_id=company_id_chosen)
     if request.method == "POST":
-        a = get_object_or_404(Company, pk=company_id_chosen)
-        info_list=Company.objects.filter(id=company_id_chosen)
-        contactperson_list = Contact_person.objects.filter(company_id=company_id_chosen)
+
         form = CompanyForm(request.POST, instance=a or None)
         if form.is_valid():
             cmodel = form.save()
             cmodel.save()
         return render_to_response('companyinfo/companyinfo.html',
-            {'info_list': info_list
-            ,'companyform': form
+            {'companyform': form
             ,'company': a
             ,'contactperson_list': contactperson_list
             },
             context_instance=RequestContext(request))
 
     else:
-        a = get_object_or_404(Company, pk=company_id_chosen)
-        info_list=Company.objects.filter(id=company_id_chosen)
-        contactperson_list = Contact_person.objects.filter(company_id=company_id_chosen)
         form = CompanyForm(instance=a)
-        #request.POST, instance=owner
-        if form.is_valid():
-            cmodel = form.save()
-            cmodel.save()
         return render_to_response('companyinfo/companyinfo.html',
-            {'info_list': info_list
-            ,'companyform': form
+            {'companyform': form
             ,'company': a
             ,'contactperson_list': contactperson_list},
             context_instance=RequestContext(request))
