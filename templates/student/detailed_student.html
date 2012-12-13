@@ -10,39 +10,32 @@
             <table>
                 {{ edit_form.as_table }}
             </table>
-            <h5>Kurs</h5>
-            <table>
-                <tr>
-                    <th>Namn</th>
-                    <th>Företag</th>
-                    <th>Företagskontakt</th>
-                    <th>Framsteg</th>
-                </tr>
-                {% for item in student.course.all %}
-                    <tr>
-                        <td>{{ item.name }}</td>
-                        <td>
-                            <select>
-                                {% for item in company_list %}
-                                    <option>{{ item.name }}</option>
-                                {% endfor %}
-                            </select>
-                        </td>
-                        <td>
-                            <select>
-                                {% for item in contact_persons %}
-                                    <option>{{ item.first_name }} {{ item.last_name }}</option>
-                                {% endfor %}
-                            </select>
-                        <td>
-                        <td>{{ item.descrition }}</td>
-                    </tr>
-                {% endfor %}
-            </table>
             <button class="btn" id="edit" style="display:block">Redigera</button>
             <button class="btn btn-primary" id="save" type="submit" style="display:none;float:left;">Spara</button>
             <button class="btn" id="cancel" type="reset" style="display:none;float:left;margin-left:5px;">Avbryt</button>
+            <div style="clear:both;"></div>
         </form>
+        <h5>Kurs</h5>
+        <table>
+            <tr>
+                <th>Namn</th>
+                <th>Företag</th>
+                <th>Företagskontakt</th>
+                <th>Framsteg</th>
+            </tr>
+            {% for item in participants %}
+                <tr>
+                    <td>{{ item.course_id }}</td>
+                    <td>{{ item.company_id }}</td>
+                    <td>{{ item.contact_person_id }}</td>
+                    <td>
+                        <button class="btn btn-success">Active</button>
+                        <button class="btn btn-warning">Pending</button>
+                        <button class="btn btn-danger">Banned</button>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
     {% else %}
         <p>Something went terribly wrong...</p>
     {% endif %}
