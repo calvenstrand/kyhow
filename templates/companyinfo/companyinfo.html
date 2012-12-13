@@ -2,24 +2,29 @@
 
 {% block content %}
 
-    <ul class="thumbnails">
+        <h2> {{ company.name }}</h2>
         <form action="/company/{{ company.id }}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <table>
                 {{ companyform.as_table }}
             </table>
             <button type="submit" class="btn btn-primary">KLICKA PA MIG</button>
+            <button type="reset" class="btn btn-secondary">Ångra ändringar</button>
         </form>
+
         {% if contactperson_list %}
-            <li class="span4">
-                <div class="thumbnail">
-                    <table>
+
+
+                <div class="">
+                    <h3>Företagskontakter</h3>
+                    <hr>
+                    <table class="table-bordered">
                     <tr>
-                        <td>Namn</td><td>Titel</td><td>telnr</td><td>email</td><td>description</td>
+                        <td>Namn</td><td>Titel</td><td>Telnr</td><td>Email</td><td>Beskrivning</td>
                     </tr>
                     {% for person in contactperson_list %}
                         <tr>
-                            <td>{{ person.first_name}} {{ person.last_name }}</td>
+                            <td>{{ person.first_name }} {{ person.last_name }}</td>
                             <td>{{ person.title }}</td>
                             <td>{{ person.phone_number }}</td>
                             <td>{{ person.email }}</td>
@@ -28,9 +33,10 @@
                     {% endfor %}
                     </table>
                 </div>
-            </li>
+
+
         {% else %}
             <p>No smthn wrongz.</p>
         {% endif %}
-    </ul>
+
 {% endblock %}
