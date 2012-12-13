@@ -1,8 +1,8 @@
 from django.contrib import admin
-from models import Student, Class, Education, Company, Contact_person, Tag, Course, Step, Participate, Participate_Step
+from models import Student, Schoolclass, Education, Company, Contact_person, Tag, Course, Step, Participate, Participate_Step
 
 admin.site.register(Student)
-admin.site.register(Class)
+admin.site.register(Schoolclass)
 admin.site.register(Education)
 admin.site.register(Company)
 admin.site.register(Contact_person)
