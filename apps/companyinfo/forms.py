@@ -1,6 +1,7 @@
 from django.forms import ModelForm, Textarea, forms
 from apps.createpage.models import Company, Tag
 class CompanyForm(ModelForm):
+    #Rewriting the labels to swedish
     def __init__(self, *args, **kwargs):
         super(CompanyForm, self).__init__(*args, **kwargs)
         self.fields['name'].label = "Namn"
@@ -9,7 +10,7 @@ class CompanyForm(ModelForm):
         self.fields['website'].label = "Hemsida"
         self.fields['description'].label = "Beskrivning"
         self.fields['tags'].label = "Taggar"
-
+    #Exclude id and change tag of description
     class Meta:
         model = Company
         exclude = ('id')
