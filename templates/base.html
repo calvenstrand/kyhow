@@ -36,14 +36,14 @@
 					<div class="imgresp">
 						<img src="/static/img/kyh.png" style="margin-top:20px;">
 					</div>
-                    {% if is_logged_in %}
+
 					<ul class="nav nav-tabs nav-stacked main-menu">
 						<li><a href="#"><i class="icon-list-alt icon-white"></i><span class="hidden-tablet"> Klasser</span></a></li>
 						<li><a href="#"><i class="icon-briefcase icon-white"></i><span class="hidden-tablet"> Företag</span></a></li>
 						<li><a href="#"><i class="icon-edit icon-white"></i><span class="hidden-tablet"> Skapa</span></a></li>
 						<li><a href="#"><i class="icon-lock icon-white"></i><span class="hidden-tablet"> Logga ut</span></a></li>
 					</ul>
-                    {% endif %}
+
 				</div><!--/.well -->
 			</div><!--/span-->
 			<!-- end: Main Menu -->
@@ -79,20 +79,16 @@
         
     <!-- Le javascript
     -------------------------------------------------------------------------------->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js">
 
-    </script>
-    <script>window.jQuery || document.write('<script src="static/js/vendor/jquery-1.8.3.min.js"><\/script>')
-   </script>
-    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="static/js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
     <script src="/static/js/vendor/bootstrap.min.js"></script>
-    <script src="/static/js/main.js">
+    <script src="/static/js/main.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    {% block scripts %}
+    {% endblock %}
 
-    </script>
-{%  block scripts  %}
-
-{% endblock %}
 
     </body>
 </html>
