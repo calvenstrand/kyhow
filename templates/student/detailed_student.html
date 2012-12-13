@@ -1,24 +1,40 @@
 {% extends "base.html" %}
+{% block scripts %}
+    <script type="text/javascript" src="/static/js/student/student.js"></script>
+{% endblock %}
 {% block content %}
     {% if student %}
         <h5>{{ student.name }}</h5>
+        <form id="editStudentForm" action="/student/{{ student.id }}/" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <table>
+                {{ edit_form.as_table }}
+            </table>
+            <button class="btn" id="edit" style="display:block">Redigera</button>
+            <button class="btn btn-primary" id="save" type="submit" style="display:none;float:left;">Spara</button>
+            <button class="btn" id="cancel" type="reset" style="display:none;float:left;margin-left:5px;">Avbryt</button>
+            <div style="clear:both;"></div>
+        </form>
+        <h5>Kurs</h5>
         <table>
             <tr>
-                <td>Namn</td>
-                <td><input type="text" value="{{ student.name }}" /></td>
+                <th>Namn</th>
+                <th>Företag</th>
+                <th>Företagskontakt</th>
+                <th>Framsteg</th>
             </tr>
-            <tr>
-                <td>Email</td>
-                <td><input type="text" value="{{ student.email }}" /></td>
-            </tr>
-            <tr>
-                <td>Telnr</td>
-                <td><input type="text" value="{{ student.phonenummber }}" /></td>
-            </tr>
-            <tr>
-                <td>Adress</td>
-                <td><input type="text" value="{{ student.address }}" /></td>
-            </tr>
+            {% for item in participants %}
+                <tr>
+                    <td>{{ item.course_id }}</td>
+                    <td>{{ item.company_id }}</td>
+                    <td>{{ item.contact_person_id }}</td>
+                    <td>
+                        <button class="btn btn-success">Active</button>
+                        <button class="btn btn-warning">Pending</button>
+                        <button class="btn btn-danger">Banned</button>
+                    </td>
+                </tr>
+            {% endfor %}
         </table>
     {% else %}
         <p>Something went terribly wrong...</p>

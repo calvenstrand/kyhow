@@ -2,33 +2,19 @@
 
 {% block content %}
 
-    {% for education in education_list %}
-    <ul>
-        <li>{{ education.name}}</li>
 
-    </ul>
-    {% endfor %}
-
-
-
-        <h1>Agile Web Developer</h1>
+        {% for education in education_list %}
+            <h2>{{ education.name }}</h2>
 
             <ul>
-                <a href=""><li>Eric</li></a>
-                <a href=""><li>Eric</li></a>
-                <a href=""><li>Eric</li></a>
-                <a href=""><li>Eric</li></a>
-                <a href=""><li>Eric</li></a>
+                {% for companies in education.companies.all %}
+
+                    <a href="/company/{{ companies.id }}"><li>{{ companies.name }}</li></a>
+
+                {% endfor %}
             </ul>
+            <br/>
 
+        {% endfor %}
 
-    <h1>Energi homo</h1>
-
-        <ul>
-            <a href=""><li>Eric</li></a>
-            <a href=""><li>Eric</li></a>
-            <a href=""><li>Eric</li></a>
-            <a href=""><li>Eric</li></a>
-            <a href=""><li>Eric</li></a>
-        </ul>
 {% endblock %}

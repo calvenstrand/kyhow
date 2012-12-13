@@ -1,47 +1,32 @@
-# Create your views here.
-from django.http import HttpResponse
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
-from apps.createpage.models import Student, Course
+from apps.createpage.models import Student, Company, Contact_person, Participate
+from apps.student.forms import EditStudentForm
 
 def detailed_student(request, student_id):
-    print student_id
-    #try:
-    student_info = Student.objects.get(pk=student_id)
-    #except Student.DoesNotExist:
-    #    return HttpResponse('Not found.')
+    student = get_object_or_404(Student, pk=student_id)
+    companies = Company.objects.all()
+    contact_persons = Contact_person.objects.all()
+    participants = Participate.objects.all()
 
-    return render_to_response("student/detailed_student.html",
-        {'student': student_info},
-        #{'course': course_info},
-        #context_instance=RequestContext(request)
-    )
-
-    # course_info = Course.objects.get(pk=student_id)
-
-
-
-
-#def detail(request, ad_id):
-    #try:
-    #    a = Ad.objects.get(pk=ad_id)
-   # except Ad.DoesNotExist:
-  #      return HttpResponse('Not found.')
- #   return render_to_response('ads/ad_detail.html', {'ad': a}, context_instance=RequestContext(request))
-
-#@login_required
-#def create(request):
-    #if request.method == 'POST':
-        #form = AddForm(request.POST, request.FILES or None)
-       # if form.is_valid():
-         #   new_ad = form.save(commit=False)
-        #    new_ad.owner = request.user
-       #     new_ad.created = datetime.now()
-      #      new_ad.save()
-     #       return HttpResponseRedirect('/ads/')
-    #else:
-     #   form = AddForm(request.FILES or None)
-
-    #return render_to_response('ads/create_ads.html',
-        #{'contact_form': form},
-        #context_instance=RequestContext(request))
+    if request.method == 'POST':
+        form = EditStudentForm(request.POST, instance=student or None)
+        if form.is_valid():
+            edit_form = form.save(commit=False)
+            edit_form.save()
+        return render_to_response('student/detailed_student.html', {
+            'companies': companies,
+            'contact_persons': contact_persons,
+            'edit_form': form,
+            'participants': participants,
+            'student': student
+        }, context_instance=RequestContext(request))
+    else:
+        form = EditStudentForm(instance=student)
+        return render_to_response('student/detailed_student.html', {
+            'companies': companies,
+            'contact_persons': contact_persons,
+            'edit_form': form,
+            'participants': participants,
+            'student': student
+        }, context_instance=RequestContext(request))
