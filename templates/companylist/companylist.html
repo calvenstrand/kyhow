@@ -2,7 +2,7 @@
 
 {% block content %}
 
-
+    <input id="tagsearch"><input type="hidden" id="hid_id"> <button id="search">Sök på tagg</button>
         {% for education in education_list %}
             <h2>{{ education.name }}</h2>
 
@@ -16,5 +16,47 @@
             <br/>
 
         {% endfor %}
+
+{% endblock %}
+{% block scripts %}
+    <script>
+
+
+        $(function() {
+
+            $("#tagsearch").autocomplete({
+                source: "/company/tagsearch/",
+                minLength: 0,
+                focus: function( event, ui ) {
+                    $( "#tagsearch" ).val( ui.item.label );
+                    return false;
+                },
+                select: function( event, ui ) {
+                    $( "#tagsearch" ).val( ui.item.label );
+                    $( "#hid_id").val ( ui.item.value );
+
+
+                    return false;
+                }
+            })
+                    .data( "autocomplete" )._renderItem = function( ul, item ) {
+                return $( "<li>" )
+                        .data( "item.autocomplete", item )
+                        .append( "<a>" + item.label + "</a>" )
+                        .appendTo( ul );
+            };
+
+            $("#search").click(function(){
+                if( $("#hid_id").val() != ''){
+
+                    window.location.href = "/company/companysearch/"+ $("#hid_id").val();
+                }
+            });
+
+
+
+        });
+    </script>
+
 
 {% endblock %}

@@ -11,4 +11,7 @@ urlpatterns = patterns('',
     url(r'company/$', 'apps.companylist.views.companyList'),
     url(r'^company/(?P<company_id>\d+)$', 'apps.companyinfo.views.companyInfo'),
     url(r'^createpage/', 'apps.createpage.views.createpage'),
+
+    url(r'^company/tagsearch/', 'apps.companylist.views.companyTagSearch', name='tagsearch'),
+    url(r'^company/companysearch/(?P<tag>\d+)$', 'apps.companylist.views.companiesFromSearch', name='companysearch'),
 )
