@@ -2,24 +2,20 @@
 {% block content %}
     <div>
         <div>
-            <a href="/createpage/something"><button>Create one</button></a>
-            <a href="/createpage/something"><button>Create two</button></a>
-            <a href="/createpage/something"><button>Create tre</button></a>
-            <a href="/createpage/something"><button>Create four</button></a>
-            <a href="/createpage/something"><button>Create five</button></a>
-            <a href="/createpage/something"><button>Create six</button></a>
-            <a href="/createpage/something"><button>Create seven</button></a>
-            <a href="/createpage/something"><button>Create eight</button></a>
+            <a href="/createpage/createschoolclass"><button>Schoolclass</button></a>
+            <a href="/createpage/createcompany"><button>Company</button></a>
+            <a href="/createpage/createcontact_person"><button>Contact person</button></a>
+            <a href="/createpage/createcourse"><button>Course</button></a>
+            <a href="/createpage/createeducation"><button>Education</button></a>
+            <a href="/createpage/createstep"><button>Step</button></a>
+            <a href="/createpage/createstudent"><button>Student</button></a>
+            <a href="/createpage/createtag"><button>Tag</button></a>
             
         </div>
         
-        <div>
-            Form
-            
-        </div>
+        {% block form %}{% endblock %}
         
     </div>
-
 
 {% endblock %}
 

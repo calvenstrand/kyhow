@@ -1,0 +1,15 @@
+{% extends "createpage/createpage.html" %}
+{% block form %}
+
+<div>
+    <form action="/createpage/createcontact_person" method="post">{% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit" />
+    </form>
+</div>
+
+
+
+{% endblock %}
+
+
