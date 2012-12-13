@@ -1,36 +1,69 @@
 from django.http import HttpResponse
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from apps.createpage.models import Student, Company, Contact_person
 from apps.student.forms import EditStudentForm
 
 def detailed_student(request, student_id):
-    form = EditStudentForm(request.POST or None)
+    student = get_object_or_404(Student, pk=student_id)
     if request.method == 'POST':
-        
+        form = EditStudentForm(request.POST, instance=student or None)
         if form.is_valid():
-            form.save()
+            edit_form = form.save(commit=False)
+            edit_form.save()
+        return render_to_response('student/detailed_student.html', {
+            'edit_form': form,
+            'student': student
+        }, context_instance=RequestContext(request))
+    else:
+        form = EditStudentForm(instance=student)
+        return render_to_response('student/detailed_student.html', {
+            'edit_form': form,
+            'student': student
+        }, context_instance=RequestContext(request))
 
-    try:
-        student_info = Student.objects.get(pk=student_id)
-    except Student.DoesNotExist:
-        return HttpResponse('Not found.')
+   # try:
+   #     student_info = Student.objects.get(pk=student_id)
+   # except Student.DoesNotExist:
+   #     return HttpResponse('Not found.')
 
-    contact_persons = Contact_person.objects.all()
+    #contact_persons = Contact_person.objects.all()
 
-    company_list = Company.objects.all()
+    #company_list = Company.objects.all()
 
-    return render_to_response("student/detailed_student.html", {
-        'student': student_info,
-        'company_list': company_list,
-        'contact_persons': contact_persons,
-        'edit_form': form
-    }, context_instance=RequestContext(request))
+    #return render_to_response("student/detailed_student.html", {
+    ##    'student': student_info,
+    #    'company_list': company_list,
+    #    'contact_persons': contact_persons,
+    #    'edit_form': form
+    #}, context_instance=RequestContext(request))
 
+#def companyInfo(request, company_id):
+#    company_id_chosen = company_id
+##    a = get_object_or_404(Company, pk=company_id_chosen)
+ ##   contactperson_list = Contact_person.objects.filter(company_id=company_id_chosen)
+  #  if request.method == "POST":
 
+ ##       form = CompanyForm(request.POST, instance=a or None)
+  #      if form.is_valid():
+  #          cmodel = form.save()
+  #          cmodel.save()
+  #      return render_to_response('companyinfo/companyinfo.html',
+  #          {'companyform': form
+  #              ,'company': a
+  #              ,'contactperson_list': contactperson_list
+  #          },
+  #          context_instance=RequestContext(request))##
 
+    #else:
+    #    form = CompanyForm(instance=a)
+   #     return render_to_response('companyinfo/companyinfo.html',
+   #         {'companyform': form
+   #             ,'company': a
+   #             ,'contactperson_list': contactperson_list},
+   #         context_instance=RequestContext(request))
 
-#def detail(request, ad_id):
+        #def detail(request, ad_id):
     #try:
     #    a = Ad.objects.get(pk=ad_id)
    # except Ad.DoesNotExist:

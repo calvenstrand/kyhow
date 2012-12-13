@@ -1,4 +1,11 @@
 $(function () {
+
+    $('#editStudentForm').find(':input').each(function() {
+        var input = $(this);
+        input.attr('disabled', 'disabled');
+    })
+    $('#edit').removeAttr('disabled');
+
     $('#edit').click(function(e) {
         e.preventDefault();
         $('#editStudentForm').find(':input').each(function() {
@@ -10,7 +17,6 @@ $(function () {
         $('#cancel').css('display', 'block');
     })
     $('#cancel').click(function(e) {
-        e.preventDefault();
         $('#editStudentForm').find(':input').each(function() {
             var input = $(this);
             input.attr('disabled', 'disabled');
