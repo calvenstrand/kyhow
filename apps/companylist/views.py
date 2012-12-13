@@ -10,5 +10,6 @@ def companyList(request):
     return render_to_response('companylist/companylist.html',
         {
             'education_list': education_list
+
         },
         context_instance=RequestContext(request))
