@@ -2,17 +2,19 @@
 
 {% block content %}
 
-    {% for education in education_list %}
-        <h2>{{ education.name }}</h2>
 
-        <ul>
-            {% for companies in education.companies.all %}
+        {% for education in education_list %}
+            <h2>{{ education.name }}</h2>
 
-                <li>{{ companies.name }}</li>
+            <ul>
+                {% for companies in education.companies.all %}
 
-            {% endfor %}
-        </ul>
-        <br/>
-    {% endfor %}
+                    <a href="/company/{{ companies.id }}"><li>{{ companies.name }}</li></a>
+
+                {% endfor %}
+            </ul>
+            <br/>
+
+        {% endfor %}
 
 {% endblock %}
