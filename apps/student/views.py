@@ -2,9 +2,15 @@ from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from apps.createpage.models import Student, Company, Contact_person
+from apps.student.forms import EditStudentForm
 
 def detailed_student(request, student_id):
-    print student_id
+    form = EditStudentForm(request.POST or None)
+    if request.method == 'POST':
+        
+        if form.is_valid():
+            form.save()
+
     try:
         student_info = Student.objects.get(pk=student_id)
     except Student.DoesNotExist:
@@ -17,7 +23,8 @@ def detailed_student(request, student_id):
     return render_to_response("student/detailed_student.html", {
         'student': student_info,
         'company_list': company_list,
-        'contact_persons': contact_persons
+        'contact_persons': contact_persons,
+        'edit_form': form
     }, context_instance=RequestContext(request))
 
 
