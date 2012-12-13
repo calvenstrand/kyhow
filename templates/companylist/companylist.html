@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    {% for education in education_list %}
+    <ul>
+        <li>{{ education.name}}</li>
+
+    </ul>
+    {% endfor %}
+
+
+
+        <h1>Agile Web Developer</h1>
+
+            <ul>
+                <a href=""><li>Eric</li></a>
+                <a href=""><li>Eric</li></a>
+                <a href=""><li>Eric</li></a>
+                <a href=""><li>Eric</li></a>
+                <a href=""><li>Eric</li></a>
+            </ul>
+
+
+    <h1>Energi homo</h1>
+
+        <ul>
+            <a href=""><li>Eric</li></a>
+            <a href=""><li>Eric</li></a>
+            <a href=""><li>Eric</li></a>
+            <a href=""><li>Eric</li></a>
+            <a href=""><li>Eric</li></a>
+        </ul>
+{% endblock %}

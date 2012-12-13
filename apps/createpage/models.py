@@ -5,15 +5,15 @@ class Student(models.Model):
     name = models.CharField(max_length=60)
     email = models.EmailField(blank=True)
     address = models.CharField(max_length= 255, blank=True)
-    phonenummber = models.IntegerField(blank=True)
-    class_id = models.ForeignKey('Class')
-    course = models.ManyToManyField('Course')
+    phone_number = models.IntegerField(blank=True)
+    schoolclass_id = models.ForeignKey('Schoolclass')
+    course = models.ManyToManyField('Course', blank=True)
     
     def __unicode__(self):
         return self.name
 
 
-class Class(models.Model):
+class Schoolclass(models.Model):
     name = models.CharField(max_length=60)
     education_id = models.ForeignKey('Education')
     
@@ -22,8 +22,8 @@ class Class(models.Model):
 
 class Education(models.Model):
     name = models.CharField(max_length=60)
-    descrition = models.CharField(max_length=5000, blank=True)
-    companys = models.ManyToManyField('Company', blank=True)
+    description = models.CharField(max_length=5000, blank=True)
+    companies = models.ManyToManyField('Company', blank=True)
     
     def __unicode__(self):
         return self.name
@@ -32,10 +32,11 @@ class Education(models.Model):
 class Company(models.Model):
     name = models.CharField(max_length=60)
     address = models.CharField(max_length= 255, blank=True)
-    phonenummber = models.IntegerField(blank=True)
+    phone_number = models.IntegerField(blank=True)
     email = models.EmailField(blank=True)
     website = models.CharField(max_length= 1000, blank=True)
-    descrition = models.CharField(max_length=5000, blank=True)
+    description = models.CharField(max_length=5000, blank=True)
+    tags = models.ManyToManyField('Tag', blank=True)
     
     def __unicode__(self):
         return self.name
@@ -43,10 +44,10 @@ class Company(models.Model):
 class Contact_person(models.Model):
     first_name = models.CharField(max_length=60)
     last_name = models.CharField(max_length=60)
-    titel = models.CharField(max_length=200, blank=True)
-    phonenummber = models.IntegerField(blank=True)
+    title = models.CharField(max_length=200, blank=True)
+    phone_number = models.IntegerField(blank=True)
     email = models.EmailField(blank=True)
-    descrition = models.CharField(max_length=5000, blank=True)
+    description = models.CharField(max_length=5000, blank=True)
     company_id = models.ForeignKey('Company')
     
     def __unicode__(self):
@@ -54,14 +55,14 @@ class Contact_person(models.Model):
 
 class Tag(models.Model):
     name = models.CharField(max_length=60)
-    companys = models.ManyToManyField('Company', blank=True)
+    
     
     def __unicode__(self):
         return self.name
 
 class Course(models.Model):
     name = models.CharField(max_length=60)
-    descrition = models.CharField(max_length=5000, blank=True)
+    description = models.CharField(max_length=5000, blank=True)
     teacher = models.CharField(max_length=60, blank=True)    
     
     
@@ -70,7 +71,7 @@ class Course(models.Model):
 
 class Step(models.Model):
     name = models.CharField(max_length=60)
-    descrition = models.CharField(max_length=5000, blank=True)
+    description = models.CharField(max_length=5000, blank=True)
     course_id = models.ForeignKey('Course')
     
     
@@ -80,12 +81,12 @@ class Step(models.Model):
 class Participate(models.Model):
     course_id = models.ForeignKey('Course')
     contact_person_id = models.ForeignKey('Contact_person', blank=True)
-    company_id = models.ForeignKey('Company')
+    company_id = models.ForeignKey('Company', blank=True)
     
 
 class Participate_Step(models.Model):
     name = models.CharField(max_length=60)
-    descrition = models.CharField(max_length=5000, blank=True)
+    description = models.CharField(max_length=5000, blank=True)
     done = models.BooleanField()
     participate = models.ForeignKey('Participate')
     
