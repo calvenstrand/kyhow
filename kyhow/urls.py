@@ -24,6 +24,6 @@ urlpatterns = patterns('',
 
 
     url(r'^company/tagsearch/', 'apps.companylist.views.companyTagSearch', name='tagsearch'),
-    url(r'^company/companysearch/(?P<tag>\d+)$', 'apps.companylist.views.companiesFromSearch', name='companysearch'),
+    url(r'^company/companysearch/(?P<tag>\w+)$', 'apps.companylist.views.companiesFromSearch', name='companysearch'),
 
 )
