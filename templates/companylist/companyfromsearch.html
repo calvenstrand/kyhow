@@ -11,7 +11,17 @@
         <ul>
             {% for company in matched_companies_list %}
 
-                <a href="/company/{{ company.id }}"><li>{{ company.name }}</li></a>
+                <li> <a href="/company/{{ company.id }}">{{ company.name }}</a>
+
+                    {% for tag in company.tags.all %}
+
+                        <a href="/company/companysearch/{{ tag.name }}">{{ tag.name }}</a>
+
+                    {% endfor %}
+
+                </li>
+
+
 
             {% endfor %}
         </ul>
