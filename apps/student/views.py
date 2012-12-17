@@ -2,7 +2,10 @@ from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from apps.createpage.models import Student, Company, Contact_person, Participate
 from apps.student.forms import EditStudentForm
+from django.contrib.auth.decorators import login_required
 
+
+@login_required
 def detailed_student(request, student_id):
     student = get_object_or_404(Student, pk=student_id)
     companies = Company.objects.all()
