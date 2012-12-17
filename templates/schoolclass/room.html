@@ -6,7 +6,6 @@
 {% for education in education %}
 <h1>{{ education.name }}</h1>
     {% for classs in class %}
-
         {% if classs.education_id.name == education.name %}
             <!-- RASMUS POPUP-->
 
@@ -22,7 +21,7 @@
                     </select>
                     <select id="courseSelect">
                         {% for course in courses %}
-                            <option value="{{ course.id }}">{{ course.name }}</option>
+                        <option value="{{ course.id }}">{{ course.name }}</option>
                         {% endfor %}
 
                     </select>
@@ -40,7 +39,7 @@
                     <div class="box-header" data-original-title>
                         <h2><i class="icon-user"></i><span class="break"></span>{{ classs.name }}</h2>
                         <div class="box-icon">
-                            <a href="#" class="btn-setting"><i class="icon-wrench"></i></a>
+                            <a href="#schoolclass{{ classs.id }}" class="btn-setting" role="button" data-toggle="modal"><i class="icon-wrench"></i></a>
                             <a href="#" class="btn-minimize"><i class="icon-chevron-down"></i></a>
                         </div>
                     </div>
@@ -77,8 +76,7 @@
         {% endif %}
     {% endfor %}
 {% endfor %}
-
 {% endblock %}
 {% block scripts %}
-    <script src="/static/js/schoolclass/schoolclass.js"></script>
+<script src="/static/js/schoolclass/schoolclass.js"></script>
 {% endblock %}
