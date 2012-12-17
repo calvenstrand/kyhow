@@ -8,15 +8,39 @@
     {% for classs in class %}
 
         {% if classs.education_id.name == education.name %}
+            <!-- RASMUS POPUP-->
 
+            <div id="schoolclass{{ classs.id }}" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 id="myModalLabel">Modal header</h3>
+                </div>
+                <div class="modal-body">
 
+                    <select id="classSelect">
+                        <option value="{{ classs.id }}">{{ classs.name }}</option>
+                    </select>
+                    <select id="courseSelect">
+                        {% for course in courses %}
+                            <option value="{{ course.id }}">{{ course.name }}</option>
+                        {% endfor %}
+
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                    <button id="connect" class="btn btn-primary">Koppla klass till kurs</button>
+
+                </div>
+            </div>
+            <!-- SLUT RASMUS POPUP-->
 
             <div class="row-fluid sortable">
                 <div class="box span12">
                     <div class="box-header" data-original-title>
                         <h2><i class="icon-user"></i><span class="break"></span>{{ classs.name }}</h2>
                         <div class="box-icon">
-                            <a href="#" class="btn-setting"><i class="icon-wrench"></i></a>
+                            <a href="#schoolclass{{ classs.id }}" class="btn-setting" role="button" data-toggle="modal"><i class="icon-wrench"></i></a>
                             <a href="#" class="btn-minimize"><i class="icon-chevron-up"></i></a>
                             <a href="#" class="btn-close"><i class="icon-remove"></i></a>
                         </div>
@@ -55,4 +79,7 @@
         {% endif %}
     {% endfor %}
 {% endfor %}
+{% endblock %}
+{% block scripts %}
+    <script src="/static/js/schoolclass/schoolclass.js"></script>
 {% endblock %}
