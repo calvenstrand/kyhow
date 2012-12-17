@@ -1,8 +1,7 @@
 # Create your views here.
 from django.http import HttpResponse
 from django.shortcuts import render_to_response, get_object_or_404, redirect
-from django.template import RequestContext
-<<<<<<< HEAD
+from django.template import RequestContex
 from apps.createpage.models import Schoolclass, Education, Student, Course
 from django.contrib.auth.decorators import login_required
 
