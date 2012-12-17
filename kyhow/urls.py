@@ -28,6 +28,7 @@ urlpatterns = patterns('',
     url(r'^company/tagsearch/', 'apps.companylist.views.companyTagSearch', name='tagsearch'),
     url(r'^company/companysearch/(?P<tag>\w+)$', 'apps.companylist.views.companiesFromSearch', name='companysearch'),
     url(r'^schoolclass/$', 'apps.schoolclass.views.school_class'),
+	url(r'^student/(?P<student_id>\d+)$', 'apps.student.views.detailed_student'),
 )
 
 urlpatterns += staticfiles_urlpatterns()
