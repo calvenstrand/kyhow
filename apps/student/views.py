@@ -12,7 +12,7 @@ def detailed_student(request, student_id):
     student = get_object_or_404(Student, pk=student_id)
     companies = Company.objects.all()
     contact_persons = Contact_person.objects.all()
-    participants = Participate.objects.all()
+    participants = Participate.objects.filter(student_id=student)
     step = Step.objects.all()
 
     if request.method == 'POST':
