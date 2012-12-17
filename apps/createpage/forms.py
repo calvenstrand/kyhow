@@ -20,6 +20,8 @@ class CourseForm(ModelForm):
 class EducationForm(ModelForm):
     class Meta:
         model = Education
+        exclude = ('companies',)
+        
 
 class StepForm(ModelForm):
     class Meta:
@@ -28,6 +30,7 @@ class StepForm(ModelForm):
 class StudentForm(ModelForm):
     class Meta:
         model = Student
+        exclude = ('course',)
 
 class TagForm(ModelForm):
     class Meta:
