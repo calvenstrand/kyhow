@@ -14,6 +14,7 @@ urlpatterns = patterns('',
     url(r'^$', 'apps.login.views.index'),
     url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^student/(?P<student_id>\d+)/$', 'apps.student.views.detailed_student'),
     url(r'company/$', 'apps.companylist.views.companyList'),
     url(r'^company/(?P<company_id>\d+)$', 'apps.companyinfo.views.companyInfo'),    
     url(r'^createpage/createschoolclass', 'apps.createpage.views.createschoolclass'),
@@ -28,7 +29,7 @@ urlpatterns = patterns('',
     url(r'^company/tagsearch/', 'apps.companylist.views.companyTagSearch', name='tagsearch'),
     url(r'^company/companysearch/(?P<tag>\w+)$', 'apps.companylist.views.companiesFromSearch', name='companysearch'),
     url(r'^schoolclass/$', 'apps.schoolclass.views.school_class'),
-	url(r'^student/(?P<student_id>\d+)$', 'apps.student.views.detailed_student'),
+    url(r'^mus/(?P<class_id>\d+)/(?P<course_id>\d+)/$', 'apps.schoolclass.views.make_schoolclass_participate'),
 )
 
 urlpatterns += staticfiles_urlpatterns()
