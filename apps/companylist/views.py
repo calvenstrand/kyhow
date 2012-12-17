@@ -9,10 +9,12 @@ from django.contrib.auth.decorators import login_required
 @login_required
 def companyList(request):
     education_list = Education.objects.all()
+    company_list = Company.objects.all()
 
     return render_to_response('companylist/companylist.html',
         {
             'education_list': education_list
+            ,'company_list': company_list
 
         },
         context_instance=RequestContext(request))
