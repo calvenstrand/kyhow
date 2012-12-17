@@ -16,13 +16,13 @@ def companyList(request):
         context_instance=RequestContext(request))
 
 def companiesFromSearch(request, tag):
-    #education_list = Education.objects.all()
-    matched_companies_list = Company.objects.filter(tags=tag)
-
-
+    filter_dict = {'tags__name__icontains': tag}
+    matched_companies_list = Company.objects.filter(**filter_dict)
     return render_to_response('companylist/companyfromsearch.html',
         {
             'matched_companies_list': matched_companies_list
+            ,'searchTerm': tag
+
 
         },
         context_instance=RequestContext(request))
