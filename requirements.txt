@@ -1,5 +1,4 @@
 Django==1.4.3
 South==0.7.6
-argparse==1.2.1
+django-dajaxice==0.5.4
 django-registration==0.8
-wsgiref==0.1.2
