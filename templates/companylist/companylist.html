@@ -1,7 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+<div class="input-append">
+    <input id="tagsearch" type="text"><input type="hidden" id="hid_id">
+    <button class="btn" id="search" type="button">Sök på tagg</button>
+</div>
 
         {% for education in education_list %}
             <h2>{{ education.name }}</h2>
@@ -16,5 +19,10 @@
             <br/>
 
         {% endfor %}
+
+{% endblock %}
+{% block scripts %}
+    <script src="/static/js/companylist/search.js"></script>
+
 
 {% endblock %}

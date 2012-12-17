@@ -5,7 +5,7 @@ class Student(models.Model):
     name = models.CharField(max_length=60)
     email = models.EmailField(blank=True)
     address = models.CharField(max_length= 255, blank=True)
-    phone_number = models.IntegerField(blank=True)
+    phone_number = models.CharField(max_length= 255, blank=True)
     schoolclass_id = models.ForeignKey('Schoolclass')
     course = models.ManyToManyField('Course', blank=True)
     
@@ -32,7 +32,7 @@ class Education(models.Model):
 class Company(models.Model):
     name = models.CharField(max_length=60)
     address = models.CharField(max_length= 255, blank=True)
-    phone_number = models.IntegerField(blank=True)
+    phone_number = models.CharField(max_length= 255, blank=True)
     email = models.EmailField(blank=True)
     website = models.CharField(max_length= 1000, blank=True)
     description = models.CharField(max_length=5000, blank=True)
@@ -45,7 +45,7 @@ class Contact_person(models.Model):
     first_name = models.CharField(max_length=60)
     last_name = models.CharField(max_length=60)
     title = models.CharField(max_length=200, blank=True)
-    phone_number = models.IntegerField(blank=True)
+    phone_number = models.CharField(max_length= 255, blank=True)
     email = models.EmailField(blank=True)
     description = models.CharField(max_length=5000, blank=True)
     company_id = models.ForeignKey('Company')
@@ -82,7 +82,7 @@ class Participate(models.Model):
     course_id = models.ForeignKey('Course')
     contact_person_id = models.ForeignKey('Contact_person', blank=True)
     company_id = models.ForeignKey('Company', blank=True)
-    
+    student_id = models.ForeignKey('Student', blank=True)
 
 class Participate_Step(models.Model):
     name = models.CharField(max_length=60)

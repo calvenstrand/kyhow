@@ -137,6 +137,8 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'south',
     'apps.createpage',
+    'registration',
+    'apps.login',
 
 )
 
@@ -168,3 +170,16 @@ LOGGING = {
         },
     }
 }
+
+ACCOUNT_ACTIVATION_DAYS=7
+EMAIL_HOST='localhost'
+EMAIL_PORT=1023
+EMAIL_HOST_USER='username'
+EMAIL_HOST_PASSWORD='password'
+
+
+ABSOLUTE_URL_OVERRIDES = {
+    'auth.user': lambda u: '/',
+}
+
+LOGIN_REDIRECT_URL = '/'

@@ -861,6 +861,17 @@ input[type="file"],
   	border-color: #dddddd !important;
 }
 
+.table {
+    background-image: -moz-linear-gradient(top, #fafafa, #efefef);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fafafa), to(#efefef));
+    background-image: -webkit-linear-gradient(top, #fafafa, #efefef);
+    background-image: -o-linear-gradient(top, #fafafa, #efefef);
+    background-image: linear-gradient(to bottom, #fafafa, #efefef);
+}
+
+thead {
+    font-weight: bold;
+}
 
 /* Hax
 =================================================================== */
@@ -945,4 +956,17 @@ footer {
 	padding: 10px 20px;
 	position: relative;
 	z-index: 2;
+}
+
+.company {
+    background-image: -moz-linear-gradient(top, #fafafa, #efefef);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fafafa), to(#efefef));
+    background-image: -webkit-linear-gradient(top, #fafafa, #efefef);
+    background-image: -o-linear-gradient(top, #fafafa, #efefef);
+    background-image: linear-gradient(to bottom, #fafafa, #efefef);
+    border: 1px solid #999999;
+    -moz-border-radius: 5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    padding: 20px;
 }

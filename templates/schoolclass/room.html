@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+{% for education in education %}   
+    <h2>{{ education.name }}</h2>
+        
+    {% for classs in class %}
+       {% if classs.education_id.name == education.name %}
+        <h1>{{ classs.name }}</h1>
+        {% for student in studentNames %}
+            
+            {% if classs.name == student.schoolclass_id.name %}
+            
+            <h1>{{ student.name }}</h1>
+            {% endif %}
+            
+        {% endfor %}     
+       
+        {% endif %}
+        
+    {% endfor %}    
+ {% endfor %}
+    
+
+<!--!{% for classs in class %}   
+        <h2><a href="/room/{{ classs.id }}">{{ classs.name  }}</a></h2>
+           
+                {% endfor %}
+    
+        {% for studentClass in studentNames %}
+                <h1>{{ studentClass.name }}</h1>
+                <p>{{ studentClass.course.id}}</p>
+                <p>{{ studentClass.phone_number }}</p>
+    
+
+
+{% endfor %}-->
+
+{% endblock %}

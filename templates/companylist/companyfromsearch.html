@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="input-append">
+        <input id="tagsearch" type="text"><input type="hidden" id="hid_id">
+        <button class="btn" id="search" type="button">Sök på tagg</button>
+        <button class="btn"><a href="/company/">Visa alla företag</a></button>
+    </div>
+
+        <ul>
+
+
+            {% for company in matched_companies_list %}
+
+                <li> <a href="/company/{{ company.id }}">{{ company.name }} - </a>
+
+                    {% for tag in company.tags.all %}
+
+                        <a href="/company/companysearch/{{ tag.name }}">{{ tag.name }}, </a>
+
+                    {% endfor %}
+
+
+
+
+                </li>
+
+
+            {% empty %}
+                <li>Inga sökresultat hittades med "{{ searchTerm }}"</li>
+            {% endfor %}
+        </ul>
+        <br/>
+
+
+{% endblock %}
+{% block scripts %}
+<script src="/static/js/companylist/search.js">
+
+
+
+</script>
+
+
+{% endblock %}
