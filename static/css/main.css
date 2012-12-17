@@ -234,6 +234,7 @@ h6 {
 	position: relative;
 	display: block;
 	margin: 20px;
+
 }
 
 .box-small-link {
@@ -283,8 +284,10 @@ h6 {
 	text-shadow: 0px 1px 1px #fff;
 }
 
+
+
 .box {
-	margin: 10px 0px;
+	margin: 20px 0px;
 }
 
 
@@ -690,6 +693,7 @@ ul.dashboard-list li .avatar img{
 .btn-warning.disabled,
 .btn-warning[disabled] {
   	background-color: #F4A506;
+	margin: 10px;
 }
 
 .btn-warning:active,
@@ -712,7 +716,6 @@ ul.dashboard-list li .avatar img{
   	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
   	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
-
 .btn-danger:hover,
 .btn-danger:active,
 .btn-danger.active,
@@ -769,7 +772,6 @@ ul.dashboard-list li .avatar img{
   	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
   	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
-
 .btn-info:hover,
 .btn-info:active,
 .btn-info.active,
@@ -806,7 +808,7 @@ ul.dashboard-list li .avatar img{
 .btn-inverse[disabled] {
   	color: #ffffff;
   	background-color: #222222;
-  	*background-color: #151515;
+  	background-color: #151515;
 }
 
 .btn-inverse:active,
@@ -994,8 +996,4 @@ footer {
     -webkit-border-radius:5px;
     border-radius:5px;
     padding: 20px;
-}
-
-.buttons {
-    margin: 10px 0px 20px 0px;
 }
