@@ -3,10 +3,7 @@ $(document).ready(function() {
     /* ---------- Datable ---------- */
     $('.datatable').dataTable({
         "sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span12'i><'span12 center'p>>",
-        "sPaginationType": "bootstrap",
-        "oLanguage": {
-            "sLengthMenu": "_MENU_ records per page"
-        }
+        "sPaginationType": "bootstrap"
     } );
 
     $('.btn-minimize').click(function(e){
@@ -23,5 +20,15 @@ $(document).ready(function() {
     });
 
     $('.box-content').hide();
+
+    $('#schoolclass{{ classs.id }}').dataTable( {
+        "oLanguage": {
+            "sLengthMenu": "Visa _MENU_ elever per sida",
+            "sZeroRecords": "Inga elever hittades",
+            "sInfo": "Visar _START_ till _END_ av _TOTAL_ elever",
+            "sInfoEmpty": "Visar 0 till 0 av 0 elever",
+            "sInfoFiltered": "(Filtrerad från _MAX_ total elever)"
+        }
+    } );
 
 } );

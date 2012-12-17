@@ -8939,7 +8939,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sFirst": "First",
+				"sFirst": "Första",
 			
 			
 				/**
@@ -8962,7 +8962,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sLast": "Last",
+				"sLast": "Sista",
 			
 			
 				/**
@@ -8985,7 +8985,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sNext": "Next",
+				"sNext": "Nästa",
 			
 			
 				/**
@@ -9008,7 +9008,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sPrevious": "Previous"
+				"sPrevious": "Föregående"
 			},
 		
 			/**
@@ -9031,7 +9031,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sEmptyTable": "No data available in table",
+			"sEmptyTable": "Inga elever finns i den här klassen",
 		
 		
 			/**
@@ -9054,7 +9054,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfo": "Showing _START_ to _END_ of _TOTAL_ entries",
+			"sInfo": "Visar _START_ till _END_ av _TOTAL_ elever",
 		
 		
 			/**
@@ -9075,7 +9075,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfoEmpty": "Showing 0 to 0 of 0 entries",
+			"sInfoEmpty": "Visar 0 till 0 av 0 elever",
 		
 		
 			/**
@@ -9097,7 +9097,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfoFiltered": "(filtered from _MAX_ total entries)",
+			"sInfoFiltered": "(Filtrerad från _MAX_ total elever)",
 		
 		
 			/**
@@ -9184,7 +9184,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sLengthMenu": "Show _MENU_ entries",
+			"sLengthMenu": "_MENU_ Elever per sida",
 		
 		
 			/**
@@ -9264,7 +9264,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sSearch": "Search:",
+			"sSearch": "Sök:",
 		
 		
 			/**
@@ -9311,7 +9311,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sZeroRecords": "No matching records found"
+			"sZeroRecords": "Inga elever hittades"
 		},
 	
 	
