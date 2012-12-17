@@ -1,42 +1,58 @@
 {% extends 'base.html' %}
 
-
 {% block content %}
 
-{% for education in education %}   
-    <h2>{{ education.name }}</h2>
-        
+
+{% for education in education %}
+<h1>{{ education.name }}</h1>
     {% for classs in class %}
-       {% if classs.education_id.name == education.name %}
-           
-        <h1>{{ classs.name }}</h1>
-        {% for student in studentNames %}
-            
-            {% if classs.name == student.schoolclass_id.name %}
-            
-            <h1>{{ student.name }}</h1>
-            {% endif %}
-            
-        {% endfor %}     
-       
+
+        {% if classs.education_id.name == education.name %}
+
+
+
+            <div class="row-fluid sortable">
+                <div class="box span12">
+                    <div class="box-header" data-original-title>
+                        <h2><i class="icon-user"></i><span class="break"></span>{{ classs.name }}</h2>
+                        <div class="box-icon">
+                            <a href="#" class="btn-setting"><i class="icon-wrench"></i></a>
+                            <a href="#" class="btn-minimize"><i class="icon-chevron-up"></i></a>
+                            <a href="#" class="btn-close"><i class="icon-remove"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="box-content">
+                        <table class="table table-striped table-bordered bootstrap-datatable datatable">
+                            <thead>
+                            <tr>
+                                <th>Username</th>
+                                <th>Status</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            {% for student in studentNames %}
+                                {% if classs.name == student.schoolclass_id.name %}
+                                <tr>
+                                    <td width="30%">{{ student.name }}</td>
+
+                                    <td class="center">
+                                        <span class="label label-success">Active</span>
+                                        <span class="label label-success">Active</span>
+                                        <span class="label label-success">Active</span>
+                                        <span class="label label-success">Active</span>
+                                    </td>
+                                </tr>
+                                {% endif %}
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div><!--/span-->
+            </div>
+
         {% endif %}
-
-    {% endfor %}    
- {% endfor %}
-    
-
-<!--!{% for classs in class %}   
-        <h2><a href="/room/{{ classs.id }}">{{ classs.name  }}</a></h2>
-           
-                {% endfor %}
-    
-        {% for studentClass in studentNames %}
-                <h1>{{ studentClass.name }}</h1>
-                <p>{{ studentClass.course.id}}</p>
-                <p>{{ studentClass.phone_number }}</p>
-    
-
-
-{% endfor %}-->
-
+    {% endfor %}
+{% endfor %}
 {% endblock %}

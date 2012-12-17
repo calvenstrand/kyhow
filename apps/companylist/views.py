@@ -3,8 +3,10 @@ from django.shortcuts import render_to_response, get_object_or_404, redirect, Ht
 from django.template import RequestContext
 from apps.createpage.models import Company, Education, Tag
 from django.utils.simplejson import dumps, loads, JSONEncoder
+from django.contrib.auth.decorators import login_required
 
 
+@login_required
 def companyList(request):
     education_list = Education.objects.all()
 
@@ -15,6 +17,8 @@ def companyList(request):
         },
         context_instance=RequestContext(request))
 
+
+@login_required
 def companiesFromSearch(request, tag):
     filter_dict = {'tags__name__icontains': tag}
     matched_companies_list = Company.objects.filter(**filter_dict)
@@ -27,6 +31,8 @@ def companiesFromSearch(request, tag):
         },
         context_instance=RequestContext(request))
 
+
+@login_required
 def companyTagSearch(request):
     if request.is_ajax():
         q = request.GET.get('term', '')

@@ -1,11 +1,14 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response, render
 from forms import CompanyForm, Contact_personForm, CourseForm, EducationForm, SchoolclassForm, StepForm, StudentForm, TagForm
+from django.contrib.auth.decorators import login_required
 
+
+@login_required
 def createpage(request):
     return render_to_response("createpage/createpage.html")
     
-
+@login_required
 def createschoolclass(request):
     
     if request.method == 'POST': # If the form has been submitted...
@@ -22,7 +25,7 @@ def createschoolclass(request):
         'form': form,
     })
     
-
+@login_required
 def createcompany(request):
     
     if request.method == 'POST': # If the form has been submitted...
@@ -39,7 +42,7 @@ def createcompany(request):
         'form': form,
     })
 
-
+@login_required
 def createcontact_person(request):
     
     if request.method == 'POST': # If the form has been submitted...
@@ -56,7 +59,7 @@ def createcontact_person(request):
         'form': form,
     })
 
-
+@login_required
 def createcourse(request):
     
     if request.method == 'POST': # If the form has been submitted...
@@ -73,7 +76,7 @@ def createcourse(request):
         'form': form,
     })
 
-
+@login_required
 def createeducation(request):
     
     if request.method == 'POST': # If the form has been submitted...
@@ -90,7 +93,7 @@ def createeducation(request):
         'form': form,
     })
     
-
+@login_required
 def createstep(request):
     
     if request.method == 'POST': # If the form has been submitted...
@@ -107,7 +110,7 @@ def createstep(request):
         'form': form,
     })
 
-
+@login_required
 def createstudent(request):
     
     if request.method == 'POST': # If the form has been submitted...
@@ -124,7 +127,7 @@ def createstudent(request):
         'form': form,
     })
 
-
+@login_required
 def createtag(request):
     
     if request.method == 'POST': # If the form has been submitted...

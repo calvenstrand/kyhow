@@ -2,8 +2,13 @@
 from django.http import HttpResponse
 from django.shortcuts import render_to_response, get_object_or_404, redirect
 from django.template import RequestContext
+<<<<<<< HEAD
 from apps.createpage.models import Schoolclass, Education, Student, Course
+from django.contrib.auth.decorators import login_required
 
+
+
+@login_required
 def school_class(request):
     schoolclass_id = Schoolclass.objects.all().order_by('name')
     student_name = Student.objects.all().order_by('name')

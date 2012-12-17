@@ -1,13 +1,14 @@
-# Create your views here.
-
 from django.shortcuts import render_to_response, get_object_or_404, redirect
 from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 from django.template import RequestContext
 from apps.createpage.models import Company, Contact_person
 from apps.companyinfo.forms import CompanyForm
+from django.contrib.auth.decorators import login_required
+
 
 #Mainview for the page, holds form and table of contactpersons
+@login_required
 def companyInfo(request, company_id):
 
     getCompany = get_object_or_404(Company, pk=company_id)
