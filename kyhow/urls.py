@@ -11,9 +11,14 @@ admin.autodiscover()
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = patterns('',
+    url(r'^admin/', include(admin.site.urls)),
+    url(r'^room/$', 'apps.schoolclass.views.school_class'),
     url(r'^$', 'apps.login.views.index'),
+<<<<<<< HEAD
     url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^admin/', include(admin.site.urls)),
+=======
+>>>>>>> New class app with education
     url(r'^student/(?P<student_id>\d+)/$', 'apps.student.views.detailed_student'),
     url(r'company/$', 'apps.companylist.views.companyList'),
     url(r'^company/(?P<company_id>\d+)$', 'apps.companyinfo.views.companyInfo'),    
