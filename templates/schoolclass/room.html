@@ -8,6 +8,7 @@
         
     {% for classs in class %}
        {% if classs.education_id.name == education.name %}
+           
         <h1>{{ classs.name }}</h1>
         {% for student in studentNames %}
             
@@ -19,7 +20,7 @@
         {% endfor %}     
        
         {% endif %}
-        
+
     {% endfor %}    
  {% endfor %}
     

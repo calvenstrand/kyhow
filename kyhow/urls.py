@@ -25,5 +25,7 @@ urlpatterns = patterns('',
     url(r'^company/tagsearch/', 'apps.companylist.views.companyTagSearch', name='tagsearch'),
     url(r'^company/companysearch/(?P<tag>\w+)$', 'apps.companylist.views.companiesFromSearch', name='companysearch'),
     url(r'^schoolclass/$', 'apps.schoolclass.views.school_class'),
+    url(r'^mus/(?P<class_id>\d+)/(?P<course_id>\d+)/$', 'apps.schoolclass.views.make_schoolclass_participate'),
+
 
 )
