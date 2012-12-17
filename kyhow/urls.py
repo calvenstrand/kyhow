@@ -24,12 +24,6 @@ urlpatterns = patterns('',
 
     url(r'^company/tagsearch/', 'apps.companylist.views.companyTagSearch', name='tagsearch'),
     url(r'^company/companysearch/(?P<tag>\w+)$', 'apps.companylist.views.companiesFromSearch', name='companysearch'),
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> removing some whitespace
-    url(r'^room/$', 'apps.schoolclass.views.school_class'),
 
-=======
->>>>>>> removing some whitespace
+    url(r'^room/$', 'apps.schoolclass.views.school_class'),
 )
