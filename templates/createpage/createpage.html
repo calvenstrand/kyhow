@@ -1,20 +1,28 @@
 {% extends "base.html" %}
 {% block content %}
-    <div>
-        <div class="buttons">
-            <a href="/createpage/createschoolclass"><button class="btn btn-small btn-primary">Schoolclass</button></a>
-            <a href="/createpage/createcompany"><button class="btn btn-small btn-primary">Company</button></a>
-            <a href="/createpage/createcontact_person"><button class="btn btn-small btn-primary">Contact person</button></a>
-            <a href="/createpage/createcourse"><button class="btn btn-small btn-primary">Course</button></a>
-            <a href="/createpage/createeducation"><button class="btn btn-small btn-primary">Education</button></a>
-            <a href="/createpage/createstep"><button class="btn btn-small btn-primary">Step</button></a>
-            <a href="/createpage/createstudent"><button class="btn btn-small btn-primary">Student</button></a>
-            <a href="/createpage/createtag"><button class="btn btn-small btn-primary">Tag</button></a>
-            
+    <div class="createbox">
+        <div class="btn-toolbar">
+            <div class="btn-group">
+                <a href="/createpage/createeducation"><button class="btn">Utbildning</button></a>
+                <a href="/createpage/createschoolclass"><button class="btn">Klass</button></a>
+                <a href="/createpage/createstudent"><button class="btn">Student</button></a>
+            </div>
+            <div class="btn-group">
+                <a href="/createpage/createcourse"><button class="btn">Kurs</button></a>
+                <a href="/createpage/createstep"><button class="btn">Steg</button></a>
+            </div>
+            <div class="btn-group">
+                <a href="/createpage/createcompany"><button class="btn">Företag</button></a>
+                <a href="/createpage/createcontact_person"><button class="btn">Företags kontakt</button></a>
+            </div>
+            <div class="btn-group">
+                <a href="/createpage/createtag"><button class="btn">Tagg</button></a>
+            </div>
         </div>
-        
+
+        <div class="boxen">
         {% block form %}{% endblock %}
-        
+        </div>
     </div>
 
 {% endblock %}
