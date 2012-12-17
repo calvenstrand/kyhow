@@ -2,7 +2,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render_to_response, get_object_or_404, redirect
 from django.template import RequestContext
-from apps.createpage.models import Schoolclass, Education, Student, Course, Participate, Contact_person, Company, Step, Participate_Step
+from apps.createpage.models import Schoolclass, Education, Student, Course
 from django.contrib.auth.decorators import login_required
 
 
@@ -27,11 +27,6 @@ def make_schoolclass_participate(request, class_id, course_id):
     course = get_object_or_404(Course, pk=course_id)
     student_name = Student.objects.filter(schoolclass_id = schoolclass).order_by('name')
 
-    ####### TO BE DELETED
-    contact_person = get_object_or_404(Contact_person, pk=1)
-    companiez = get_object_or_404(Company, pk=1)
-    ######
-
     for student in student_name:
         student.course.add(course)#Maybe check if this creates a new instance and destroys something.
         student.save()
@@ -47,6 +42,7 @@ def make_schoolclass_participate(request, class_id, course_id):
     #### UPPER THINGS WORK JUST FINE, STILL NEED ALLOW NULL, MIGHT NEED TESTING WHEN DEPLOYED IF IT CAN CRASH
 
     return redirect('apps.schoolclass.views.school_class')
+    #return render_to_response("schoolclass/room.html",{'studentNames':student_name, 'class':schoolclass_id, 'education':education_name, 'courses':courses },context_instance=RequestContext(request))
 
 
 

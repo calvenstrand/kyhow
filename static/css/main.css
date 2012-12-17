@@ -234,6 +234,7 @@ h6 {
 	position: relative;
 	display: block;
 	margin: 20px;
+
 }
 
 .box-small-link {
@@ -283,8 +284,10 @@ h6 {
 	text-shadow: 0px 1px 1px #fff;
 }
 
+
+
 .box {
-	margin: 10px 0px;
+	margin: 20px 0px;
 }
 
 
@@ -365,32 +368,6 @@ h6 {
 	-webkit-box-shadow: 0 1px 0px rgba(255, 255, 255, .6);
 	   -moz-box-shadow: 0 1px 0px rgba(255, 255, 255, .6);
 			box-shadow: 0 1px 0px rgba(255, 255, 255, .6);
-}
-
-.createbox {
-    margin-top: -1px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    background: #fcfcfc;
-    -webkit-border-radius: 0px 0px 2px 2px;
-    -moz-border-radius: 0px 0px 2px 2px;
-    border-radius: 0px 0px 2px 2px;
-    -webkit-box-shadow: 0 1px 0px rgba(255, 255, 255, .6);
-    -moz-box-shadow: 0 1px 0px rgba(255, 255, 255, .6);
-    box-shadow: 0 1px 0px rgba(255, 255, 255, .6);
-}
-
-.boxen {
-    margin-top:20px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    background: #fcfcfc;
-    -webkit-border-radius: 0px 0px 2px 2px;
-    -moz-border-radius: 0px 0px 2px 2px;
-    border-radius: 0px 0px 2px 2px;
-    -webkit-box-shadow: 0 1px 0px rgba(255, 255, 255, .6);
-    -moz-box-shadow: 0 1px 0px rgba(255, 255, 255, .6);
-    box-shadow: 0 1px 0px rgba(255, 255, 255, .6);
 }
 
 .imgresp {
@@ -690,11 +667,13 @@ ul.dashboard-list li .avatar img{
 .btn-warning.disabled,
 .btn-warning[disabled] {
   	background-color: #F4A506;
+	
 }
 
 .btn-warning:active,
 .btn-warning.active {
   	background-color: #F4A506 \9;
+	
 }
 
 .btn-danger {
@@ -712,7 +691,6 @@ ul.dashboard-list li .avatar img{
   	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
   	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
-
 .btn-danger:hover,
 .btn-danger:active,
 .btn-danger.active,
@@ -769,7 +747,6 @@ ul.dashboard-list li .avatar img{
   	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
   	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
-
 .btn-info:hover,
 .btn-info:active,
 .btn-info.active,
@@ -806,7 +783,7 @@ ul.dashboard-list li .avatar img{
 .btn-inverse[disabled] {
   	color: #ffffff;
   	background-color: #222222;
-  	*background-color: #151515;
+  	background-color: #151515;
 }
 
 .btn-inverse:active,
@@ -994,8 +971,4 @@ footer {
     -webkit-border-radius:5px;
     border-radius:5px;
     padding: 20px;
-}
-
-.buttons {
-    margin: 10px 0px 20px 0px;
 }
