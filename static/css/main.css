@@ -969,3 +969,7 @@ footer {
     border-radius:5px;
     padding: 20px;
 }
+
+.buttons {
+    margin: 10px 0px 20px 0px;
+}
