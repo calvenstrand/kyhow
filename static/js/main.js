@@ -21,14 +21,4 @@ $(document).ready(function() {
 
     $('.box-content').hide();
 
-    $('#schoolclass{{ classs.id }}').dataTable( {
-        "oLanguage": {
-            "sLengthMenu": "Visa _MENU_ elever per sida",
-            "sZeroRecords": "Inga elever hittades",
-            "sInfo": "Visar _START_ till _END_ av _TOTAL_ elever",
-            "sInfoEmpty": "Visar 0 till 0 av 0 elever",
-            "sInfoFiltered": "(Filtrerad från _MAX_ total elever)"
-        }
-    } );
-
 } );
