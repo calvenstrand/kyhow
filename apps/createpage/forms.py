@@ -20,7 +20,7 @@ class CourseForm(ModelForm):
 class EducationForm(ModelForm):
     class Meta:
         model = Education
-        exclude = ('companies',)
+        
         
 
 class StepForm(ModelForm):
