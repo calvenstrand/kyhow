@@ -36,13 +36,17 @@
 					<div class="imgresp">
 						<img src="/static/img/kyh.png" style="margin-top:20px;">
 					</div>
-
+				
 					<ul class="nav nav-tabs nav-stacked main-menu">
+						{% if user.is_anonymous %}
+						{% else %}
 						<li><a href="#"><i class="icon-list-alt icon-white"></i><span class="hidden-tablet"> Klasser</span></a></li>
 						<li><a href="/company/"><i class="icon-briefcase icon-white"></i><span class="hidden-tablet"> Företag</span></a></li>
 						<li><a href="#"><i class="icon-edit icon-white"></i><span class="hidden-tablet"> Skapa</span></a></li>
-						<li><a href="#"><i class="icon-lock icon-white"></i><span class="hidden-tablet"> Logga ut</span></a></li>
+						<li><a href="/accounts/logout/"><i class="icon-lock icon-white"></i><span class="hidden-tablet"> Logga ut</span></a></li>
+						{% endif %}
 					</ul>
+					
 
 				</div><!--/.well -->
 			</div><!--/span-->
