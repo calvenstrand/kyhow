@@ -1005,30 +1005,8 @@ pre code {
 }
 
 form {
-    border: 1px solid #BABABA;
-    height: auto;
-    margin: 0 0 20px;
-    padding: 20px;
-    width: 328px;
+  margin: 0 0 20px;
 }
-
-form h1{
-    color: #F4A506;
-    font-size: 18px;
-    line-height: 18px; 
-}
-
-form p{
-    color: #999999;
-    margin: 0 0 10px;
-}
-
-form .error-message
-{
-color: red;   
-}
-
-
 
 fieldset {
   padding: 0;
@@ -1109,11 +1087,6 @@ input,
 textarea,
 .uneditable-input {
   width: 206px;
-}
-
-.controls
-{
-  margin-top: 10px;
 }
 
 textarea {
@@ -1335,7 +1308,6 @@ textarea[class*="span"],
 .row-fluid .input-prepend [class*="span"],
 .row-fluid .input-append [class*="span"] {
   display: inline-block;
-  background: #fff;
 }
 
 input,
