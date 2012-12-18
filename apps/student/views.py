@@ -37,7 +37,8 @@ def detailed_student(request, student_id):
             'contact_persons': contact_persons,
             'edit_form': form,
             'part': participate_step,
-            'student': student
+            'student': student,
+            'participants': participants
         }, context_instance=RequestContext(request))
     else:
         form = EditStudentForm(instance=student)

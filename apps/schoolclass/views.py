@@ -14,11 +14,28 @@ def school_class(request):
     education_name = Education.objects.all().order_by('name')
     courses = Course.objects.all().order_by('name');
 
+    """
+    New things for the steps
+
+    """
+    participa = Participate.objects.all()
+    #step = Step.objects.all()
+    partzz = get_object_or_404(Course, pk=1)
+    #HARDCODED ONLY TO 1 course now!
+    participate_step = Participate_Step.objects.all()
+
+    """
+    END new things
+    """
+
     return render_to_response("schoolclass/room.html",
         {'studentNames':student_name
             , 'class':schoolclass_id
             , 'education':education_name
             , 'courses':courses
+            ,'partzz':partzz
+            ,'participa':participa
+            ,'part':participate_step
         },context_instance=RequestContext(request))
 
 

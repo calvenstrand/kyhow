@@ -67,7 +67,7 @@
                             <thead>
                             <tr>
                                 <th>Username</th>
-                                <th>Status</th>
+                                <th>Status - {{ partzz.name }}</th>
                             </tr>
                             </thead>
 
@@ -78,10 +78,28 @@
                                     <td width="30%"><a href="/student/{{ student.id }}/">{{ student.name }}</a></td>
 
                                     <td class="center">
-                                        <span class="label label-success">Active</span>
-                                        <span class="label label-success">Active</span>
-                                        <span class="label label-success">Active</span>
-                                        <span class="label label-success">Active</span>
+                                        {% for partici in participa %}
+                                            {% if partici.student_id == student  %}
+                                               {% for parz in part %}
+                                                   {% if partici == parz.participate %}
+                                                       {% if parz.done %}
+                                                           <span id="{{ parz.id }}" class="label label-success">
+                                                       {% else %}
+                                                           <span id="{{ parz.id }}" class="label label-important">
+                                                       {% endif %}
+
+                                                   {{ parz.name }}
+                                                   </span>
+                                                   {% endif %}
+
+                                                {% endfor %}
+
+
+
+
+                                            {% endif %}
+                                        {% endfor %}
+
                                     </td>
                                 </tr>
                                 {% endif %}

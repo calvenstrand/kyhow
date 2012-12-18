@@ -10,3 +10,23 @@ $('#connect').click(function(){
     });
 
 });
+
+//dj mouse ajax for clicking steps
+$('.label').click(function(){
+    var idzz = $(this).attr('id');
+    console.log(idzz);
+
+    $.post('/changestep/'+idzz+'/', function(data) {
+        if(data === 0){
+            $('#'+idzz).attr('class' ,'label label-important');
+        }else if(data === 1){
+            $('#'+idzz).attr('class' ,'label label label-success');
+
+        }
+
+        console.log(data);
+
+
+    });
+
+});
