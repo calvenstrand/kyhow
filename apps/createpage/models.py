@@ -7,7 +7,7 @@ class Student(models.Model):
     address = models.CharField(max_length= 255, blank=True)
     phone_number = models.CharField(max_length= 255, blank=True)
     schoolclass_id = models.ForeignKey('Schoolclass')
-    course = models.ManyToManyField('Course', blank=True)
+    course = models.ManyToManyField('Course', blank=True, null = True)
     
     def __unicode__(self):
         return self.name
@@ -36,8 +36,8 @@ class Company(models.Model):
     email = models.EmailField(blank=True)
     website = models.CharField(max_length= 1000, blank=True)
     description = models.CharField(max_length=5000, blank=True)
-    education = models.ManyToManyField('Education', blank=True)
-    tags = models.ManyToManyField('Tag', blank=True)
+    education = models.ManyToManyField('Education', blank=True, null = True)
+    tags = models.ManyToManyField('Tag', blank=True, null = True)
     
     def __unicode__(self):
         return self.name
@@ -72,6 +72,7 @@ class Course(models.Model):
 
 class Step(models.Model):
     name = models.CharField(max_length=60)
+    step_order = models.IntegerField()
     description = models.CharField(max_length=5000, blank=True)
     course_id = models.ForeignKey('Course')
     
