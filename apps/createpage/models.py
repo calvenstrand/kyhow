@@ -82,27 +82,19 @@ class Step(models.Model):
 
 class Participate(models.Model):
     course_id = models.ForeignKey('Course')
-    contact_person_id = models.ForeignKey('Contact_person', blank=True)
-    company_id = models.ForeignKey('Company', blank=True)
+    contact_person_id = models.ForeignKey('Contact_person', blank=True, null=True)
+    company_id = models.ForeignKey('Company', blank=True, null=True)
     student_id = models.ForeignKey('Student', blank=True)
 
 class Participate_Step(models.Model):
     name = models.CharField(max_length=60)
     description = models.CharField(max_length=5000, blank=True)
+    step_order = models.IntegerField()
     done = models.BooleanField()
     participate = models.ForeignKey('Participate')
     
     def __unicode__(self):
         return self.name
-
-
-
-
-
-
-
-
-
 
 
 

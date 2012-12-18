@@ -1,5 +1,11 @@
 {% extends "base.html" %}
 
+{% block headermeny %}
+<li><a href="/schoolclass/">Company</a> <span class="divider">/</span></li>
+<li class="active">Company info</li>
+{% endblock %}
+
+
 {% block content %}
     <div class="company">
         <h2>{{ company.name }}</h2>

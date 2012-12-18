@@ -1,4 +1,10 @@
 {% extends "base.html" %}
+
+{% block headermeny %}
+<li><a href="/schoolclass/">Class</a> <span class="divider">/</span></li>
+<li class="active">Student</li>
+{% endblock %}
+
 {% block scripts %}
     <script type="text/javascript" src="/static/js/student/student.js"></script>
 {% endblock %}
