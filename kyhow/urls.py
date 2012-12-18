@@ -30,6 +30,7 @@ urlpatterns = patterns('',
     url(r'^company/companysearch/(?P<tag>\w+)$', 'apps.companylist.views.companiesFromSearch', name='companysearch'),
     url(r'^schoolclass/$', 'apps.schoolclass.views.school_class'),
     url(r'^mus/(?P<class_id>\d+)/(?P<course_id>\d+)/$', 'apps.schoolclass.views.make_schoolclass_participate'),
+    url(r'^changestep/(?P<participate_step_id>\d+)/$', 'apps.student.views.change_step_value'),
 )
 
 urlpatterns += staticfiles_urlpatterns()

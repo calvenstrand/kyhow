@@ -41,7 +41,14 @@
                     <td>
                         {% for step in part %}
                             {% if step.participate == something %}
+                                {% if step.done %}
+                                    <span id="{{ step.id }}" class="label label-success">
+                                {% else %}
+                                    <span id="{{ step.id }}" class="label label-important">
+                                    {% endif %}
+
                                 {{ step.name }}
+                            </span>
                             {% endif %}
                             {% endfor %}
 

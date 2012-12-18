@@ -3,9 +3,9 @@ $('#connect').click(function(){
     console.log(idz);
     var classVal = $('#classSelect').val();
     var courseVal = $('#courseSelect').val();
-    $.post('/mus/'+classVal+'/'+courseVal+'/', function() {
+    $.post('/mus/'+classVal+'/'+courseVal+'/', function(data) {
         $('#'+idz).modal('hide')
-        console.log(idz);
+
 
     });
 
