@@ -89,6 +89,7 @@ class Participate(models.Model):
 class Participate_Step(models.Model):
     name = models.CharField(max_length=60)
     description = models.CharField(max_length=5000, blank=True)
+    step_order = models.IntegerField()
     done = models.BooleanField()
     participate = models.ForeignKey('Participate')
     
