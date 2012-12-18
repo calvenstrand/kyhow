@@ -12,7 +12,7 @@ def detailed_student(request, student_id):
     student = get_object_or_404(Student, pk=student_id)
     companies = Company.objects.all()
     contact_persons = Contact_person.objects.all()
-    #participants = Participate.objects.filter(student_id=student)
+    participants = Participate.objects.filter(student_id=student)
     #step = Step.objects.all()
     participate_step = Participate_Step.objects.all()
     #print participate_step.all()
@@ -45,5 +45,6 @@ def detailed_student(request, student_id):
             'contact_persons': contact_persons,
             'edit_form': form,
             'part': participate_step,
-            'student': student
+            'student': student,
+            'participants': participants
         }, context_instance=RequestContext(request))
