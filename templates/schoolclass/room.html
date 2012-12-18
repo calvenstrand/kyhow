@@ -17,23 +17,36 @@
             <div id="schoolclass{{ classs.id }}" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h3 id="myModalLabel">Modal header</h3>
+                    <h3 id="myModalLabel">Skifnyckel för {{ classs.name }}</h3>
                 </div>
                 <div class="modal-body">
-
-                    <select id="classSelect">
+                Lägg till klass på kurs
+                    <label for="class">Klass</label>
+                    <select id="classSelect" name="class">
                         <option value="{{ classs.id }}">{{ classs.name }}</option>
                     </select>
-                    <select id="courseSelect">
+                    <label for="course">Kurs</label>
+                    <select id="courseSelect" name="course">
                         {% for course in courses %}
                         <option value="{{ course.id }}">{{ course.name }}</option>
                         {% endfor %}
 
                     </select>
+                    <button id="connect" class="btn btn-primary">Koppla klass till kurs</button>
+                <hr>
+                Visa kurs i overview:
+                    <select>
+                        {% for course in courses %}
+                            <option value="{{ course.id }}">{{ course.name }}</option>
+                        {% endfor %}
+
+                    </select>
+                    <button class="btn btn-primary">Visa kurs i overview</button>
                 </div>
+
                 <div class="modal-footer">
                     <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-                    <button id="connect" class="btn btn-primary">Koppla klass till kurs</button>
+
 
                 </div>
             </div>
