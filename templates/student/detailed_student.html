@@ -4,6 +4,7 @@
 {% endblock %}
 {% block content %}
     {% if student %}
+    <div class="company">
         <h5>{{ student.name }}</h5>
         <form id="editStudentForm" action="/student/{{ student.id }}/" method="post" enctype="multipart/form-data">
             {% csrf_token %}
@@ -16,15 +17,15 @@
             <div style="clear:both;"></div>
         </form>
         <h5>Kurs</h5>
-        <table>
-            <tr>
-                <th>Namn</th>
-                <th>Företag</th>
-                <th>Företagskontakt</th>
-                <th>Framsteg</th>
-            </tr>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Namn</th><th>Företag</th><th>Företagskontakt</th><th>Framsteg</th>
+                </tr>
+            </thead>
             {% if participants %}
             {% for item in participants %}
+            <tbody>
                 <tr>
                     <td>{{ item.course_id }}</td>
                     <td>{{ item.company_id }}</td>
@@ -37,14 +38,18 @@
                         </select>
                     </td>
                 </tr>
+            </tbody>
             {% endfor %}
             {% else %}
+            <tbody>
                 <tr>
-                    <td>There's no courses to show.</td>
+                    <td>Det finns inga kurser att visa...</td>
                 </tr>
+            </tbody>
             {% endif %}
         </table>
+    </div>
     {% else %}
-        <p>Something went terribly wrong...</p>
+        <p>Något gick fruktansvärt fel...</p>
     {% endif %}
 {% endblock %}
