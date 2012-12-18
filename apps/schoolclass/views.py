@@ -35,16 +35,16 @@ def make_schoolclass_participate(request, class_id, course_id):
     for student in student_name:
         student.course.add(course)#Maybe check if this creates a new instance and destroys something.
         student.save()
-        party2 = Participate.objects.get_or_create(course_id=course, student_id=student)#should not need company and contact!! # We need some allow null!
+        party2 = Participate.objects.get_or_create(course_id=course, student_id=student)
 
 
         ##### newz
         party = get_object_or_404(Participate, course_id=course, student_id=student)
         stepsToAdd = Step.objects.filter(course_id = course)
         for step in stepsToAdd:
-            Participate_Step.objects.get_or_create(name = step.name, description=step.description, participate=party)
+            Participate_Step.objects.get_or_create(name = step.name, description=step.description,step_order=step.step_order, participate=party)
 
-        #### UPPER THINGS WORK JUST FINE, STILL NEED ALLOW NULL, MIGHT NEED TESTING WHEN DEPLOYED IF IT CAN CRASH
+        ####MIGHT NEED TESTING WHEN DEPLOYED IF IT CAN CRASH
 
     return redirect('apps.schoolclass.views.school_class')
 
