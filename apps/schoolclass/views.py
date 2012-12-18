@@ -28,14 +28,14 @@ def make_schoolclass_participate(request, class_id, course_id):
     student_name = Student.objects.filter(schoolclass_id = schoolclass).order_by('name')
 
     ####### TO BE DELETED
-    contact_person = get_object_or_404(Contact_person, pk=1)
-    companiez = get_object_or_404(Company, pk=1)
-    ######
+    #contact_person = get_object_or_404(Contact_person, pk=1)
+    #companiez = get_object_or_404(Company, pk=1)
+    ######, contact_person_id=contact_person, company_id=companiez
 
     for student in student_name:
         student.course.add(course)#Maybe check if this creates a new instance and destroys something.
         student.save()
-        party2 = Participate.objects.get_or_create(course_id=course, student_id=student, contact_person_id=contact_person, company_id=companiez)#should not need company and contact!! # We need some allow null!
+        party2 = Participate.objects.get_or_create(course_id=course, student_id=student)#should not need company and contact!! # We need some allow null!
 
 
         ##### newz
