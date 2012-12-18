@@ -98,12 +98,3 @@ class Participate_Step(models.Model):
 
 
 
-
-
-
-
-
-
-
-
-
