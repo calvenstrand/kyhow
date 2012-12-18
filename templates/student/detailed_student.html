@@ -23,23 +23,18 @@
                     <th>Namn</th><th>Företag</th><th>Företagskontakt</th><th>Framsteg</th>
                 </tr>
             </thead>
-            {% if participants %}
-            {% for item in participants %}
+            {% if part %}
             <tbody>
+                {% for something in part %}
                 <tr>
-                    <td>{{ item.course_id }}</td>
-                    <td>{{ item.company_id }}</td>
-                    <td>{{ item.contact_person_id }}</td>
-                    <td>
-                        <select onclick="my_js_callback();">
-                            <option>Aktiv</option>
-                            <option>Pågående</option>
-                            <option>Avslutad</option>
-                        </select>
-                    </td>
+                    <td>{{ something.participate.course_id.name }}</td>
+                    <td>{{ something.participate.company_id.name }}</td>
+                    <td>{{ something.participate.contact_person_id.first_name }} {{ something.participate.contact_person_id.last_name }}</td>
+                    <td><select type="checkbox"></select></td>
                 </tr>
+                {% endfor %}
             </tbody>
-            {% endfor %}
+
             {% else %}
             <tbody>
                 <tr>

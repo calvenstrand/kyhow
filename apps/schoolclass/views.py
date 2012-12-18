@@ -30,7 +30,7 @@ def make_schoolclass_participate(request, class_id, course_id):
     for student in student_name:
         student.course.add(course)#Maybe check if this creates a new instance and destroys something.
         student.save()
-        part = Participate.objects.get_or_create(course_id=course, student_id=student, contact_person_id=contact_person, company_id=companiez)#should not need company and contact!! # We need some allow null!
+        party2 = Participate.objects.get_or_create(course_id=course, student_id=student, contact_person_id=contact_person, company_id=companiez)#should not need company and contact!! # We need some allow null!
 
 
     ##### newz
