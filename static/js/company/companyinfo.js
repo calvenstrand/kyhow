@@ -2,7 +2,8 @@ $(function () {
 
 $('#editCompanyForm').find(':input').each(function () {
     $(this).attr('disabled', 'disabled');
-});
+
+})
 
 $('#edit').removeAttr('disabled');
 
