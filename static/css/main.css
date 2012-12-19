@@ -997,3 +997,7 @@ select[disabled] option {
 .cursor-fix {
     cursor: pointer;
 }
+
+#course-select {
+    margin-top:10px;
+}
