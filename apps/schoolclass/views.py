@@ -37,6 +37,7 @@ def school_class(request):
         },context_instance=RequestContext(request))
 
 
+
 def make_schoolclass_participate(request, class_id, course_id):
     schoolclass = get_object_or_404(Schoolclass, pk=class_id)
     course = get_object_or_404(Course, pk=course_id)
@@ -55,6 +56,35 @@ def make_schoolclass_participate(request, class_id, course_id):
         ####MIGHT NEED TESTING WHEN DEPLOYED IF IT CAN CRASH
 
     return redirect('apps.schoolclass.views.school_class')
+
+@login_required
+def school_class_by_course(request, course_id):
+    schoolclass_id = Schoolclass.objects.all().order_by('name')
+    student_name = Student.objects.all().order_by('name')
+    education_name = Education.objects.all().order_by('name')
+    courses = Course.objects.all().order_by('name')
+
+    """
+    New things for the steps
+
+    """
+    participateObjects = Participate.objects.all()
+    getWantedCourse = get_object_or_404(Course, pk=course_id) #Gets latest, should be a view to find selected also.
+    participate_step = Participate_Step.objects.all().order_by('step_order')
+
+    """
+    END new things
+    """
+
+    return render_to_response("schoolclass/room.html",
+        {'studentNames':student_name
+            , 'class':schoolclass_id
+            , 'education':education_name
+            , 'courses':courses
+            ,'wanted_course':getWantedCourse
+            ,'participates':participateObjects
+            ,'participate_step':participate_step
+        },context_instance=RequestContext(request))
 
 
 
