@@ -972,3 +972,17 @@ footer {
     border-radius:5px;
     padding: 20px;
 }
+
+.login {
+    background-image: -moz-linear-gradient(top, #fafafa, #efefef);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fafafa), to(#efefef));
+    background-image: -webkit-linear-gradient(top, #fafafa, #efefef);
+    background-image: -o-linear-gradient(top, #fafafa, #efefef);
+    background-image: linear-gradient(to bottom, #fafafa, #efefef);
+    border: 1px solid #999999;
+    -moz-border-radius: 5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    padding: 20px;
+    width:260px;
+}
