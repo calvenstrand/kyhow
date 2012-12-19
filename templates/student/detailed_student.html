@@ -36,8 +36,52 @@
                 {% for something in participants %}
                 <tr>
                     <td>{{ something.course_id.name }}</td>
-                    <td>{{ something.company_id.name }}</td>
-                    <td>{{ something.contact_person_id.first_name }} {{ something.participate.contact_person_id.last_name }}</td>
+                    
+                    
+                    
+                    <td>
+                        <input type="hidden" id="participate_hid" value="{{something.id}}">
+                        <select id="select_company">
+                            <option value="välj Företag">Välj Företag</option>
+                            {% for companies in companies %}
+                                {% if companies.id == something.company_id.id %}
+                                    <option value="{{companies.id}}" selected>{{companies.name}}</option>
+                                {% else %}
+                                    <option value="{{companies.id}}">{{companies.name}}</option>
+                                {% endif %}
+                                
+                                
+                                
+                            {% endfor %}
+                        </select>
+                        
+                    </td>
+                    
+                    
+                    
+                    <td>
+                        <select id="select_contact_person">
+                            <option value="välj kontakt person">Välj kontakt person</option>
+                            {% for contact_persons in contact_persons %}
+                                {% if contact_persons.company_id.id == something.company_id.id %}
+                                    {% if contact_persons.id == something.contact_person_id.id %}
+                                        <option value="{{contact_persons.id}}" selected>{{contact_persons.first_name}} {{contact_persons.last_name}}</option>
+                                    {% else %}
+                                        <option value="{{contact_persons.id}}">{{contact_persons.first_name}} {{contact_persons.last_name}}</option>
+                                    {% endif %}
+                                    
+                                {% endif %}
+                                
+                                
+                            {% endfor %}
+                        </select>
+                        
+                        
+                    </td>
+                    
+                    
+                    
+                    
                     <td>
                         {% for step in part %}
                             {% if step.participate == something %}

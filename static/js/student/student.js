@@ -47,6 +47,36 @@ $(function () {
 
     });
 
+    
+    //funktion för val av företag
+    $('#select_company').change(function(){
 
+        var participate = $('#participate_hid').val();
+        var company = $('#select_company').val();
+        
+        $.post('/changecompany/'+participate+'/'+company+'/', function(data) {
+        
+        location.reload();    
+            
+        });
+
+    });
+    
+    
+    //funktion för val av kontaktperson
+    $('#select_contact_person').change(function(){
+
+        var participate = $('#participate_hid').val();
+        var contact_person = $('#select_contact_person').val();
+        
+        $.post('/changecontactperson/'+participate+'/'+contact_person+'/', function(data) {
+        
+        location.reload();    
+            
+        });
+
+    });
+    
+    
 
 })

@@ -987,7 +987,9 @@ footer {
     width:260px;
 }
 
-select[disabled] {
+select[disabled] option {
+
+    -webkit-appearance: none;
     background: #eee;
-    color: #fff;
+    color: #000;
 }
