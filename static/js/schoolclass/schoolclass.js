@@ -5,6 +5,7 @@ $('.connecter').click(function(){
     var courseVal = $('#courseSelect').val();
     $.post('/mus/'+classVal+'/'+courseVal+'/', function(data) {
         $('#'+idz).modal('hide')
+        location.reload();
 
 
     });
