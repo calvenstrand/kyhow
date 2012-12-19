@@ -42,6 +42,28 @@
                         </tbody>
                     {% endfor %}
                     </table>
+                    
+                    <h2>Studenter som jobbat med {{company.name}}</h2>
+                    <hr>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <td>Namn</td><td>Kurs</td><td>Kontaktperson</td>
+                            </tr>
+                        </thead>
+                    {% for Participate in Participate_list %}
+                        <tbody>
+                            {% if Participate.company_id.id  == company.id %}
+                            <tr>
+                                <td><a href="/student/{{Participate.student_id.id}}">{{ Participate.student_id.name }}</a></td>
+                                <td>{{ Participate.course_id.name }}</td>
+                                <td>{{ Participate.contact_person_id.first_name }} {{ Participate.contact_person_id.last_name }}</td>
+                                
+                            </tr>
+                            {% endif %}
+                        </tbody>
+                    {% endfor %}
+                    </table>
                 </div>
 
 
