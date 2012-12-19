@@ -14,18 +14,7 @@ def detailed_student(request, student_id):
     companies = Company.objects.all()
     contact_persons = Contact_person.objects.all()
     participants = Participate.objects.filter(student_id=student)
-    #step = Step.objects.all()
-    participate_step = Participate_Step.objects.all()
-    #print participate_step.all()
-
-    #for item in participate_step:
-        #print item.participate
-     #   a = item.participate
-        #print item.participate.company_id
-        #for b in items():
-         #   b.company_id
-
-
+    participate_step = Participate_Step.objects.all().order_by('step_order')
 
     if request.method == 'POST':
         form = EditStudentForm(request.POST, instance=student or None)
@@ -62,9 +51,6 @@ def change_step_value(request, participate_step_id):
     else:
         step.done = True
         step.save()
-
-
-
 
             ####MIGHT NEED TESTING WHEN DEPLOYED IF IT CAN CRASH
         return HttpResponse({1}, mimetype='application/json')

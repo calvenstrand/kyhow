@@ -12,7 +12,7 @@ def school_class(request):
     schoolclass_id = Schoolclass.objects.all().order_by('name')
     student_name = Student.objects.all().order_by('name')
     education_name = Education.objects.all().order_by('name')
-    courses = Course.objects.all().order_by('name');
+    courses = Course.objects.all().order_by('name')
 
     """
     New things for the steps
@@ -22,7 +22,7 @@ def school_class(request):
     #step = Step.objects.all()
     partzz = get_object_or_404(Course, pk=1)
     #HARDCODED ONLY TO 1 course now!
-    participate_step = Participate_Step.objects.all()
+    participate_step = Participate_Step.objects.all().order_by('step_order')
 
     """
     END new things
