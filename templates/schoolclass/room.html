@@ -8,6 +8,7 @@
 {% block content %}
 
     Visa kurs i overview:
+    Visar : <b>{{ wanted_course.name }}</b>
     <select id="course-select">
         {% for course in courses %}
             <option value="{{ course.id }}">{{ course.name }}</option>
