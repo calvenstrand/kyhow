@@ -1,6 +1,6 @@
 from django.core.signals import request_finished
 from django.dispatch import receiver
-from django.shortcuts import render_to_response, get_object_or_404
+from django.shortcuts import render_to_response, get_object_or_404, redirect
 from django.template import RequestContext
 from django.http import HttpResponse
 from apps.createpage.models import Student, Company, Contact_person, Participate, Step, Participate_Step
@@ -54,3 +54,28 @@ def change_step_value(request, participate_step_id):
 
             ####MIGHT NEED TESTING WHEN DEPLOYED IF IT CAN CRASH
         return HttpResponse({1}, mimetype='application/json')
+    
+    
+@login_required
+def change_participate_company(request, participate_id, company_id):
+    participate = get_object_or_404(Participate, pk=participate_id)
+    company = get_object_or_404(Company, pk=company_id)
+    
+    participate.company_id = company
+    participate.contact_person_id = None
+    participate.save()
+    
+    return HttpResponse({1}, mimetype='application/json')
+
+
+@login_required
+def change_participate_contact_person(request, participate_id, contact_person_id):
+    participate = get_object_or_404(Participate, pk=participate_id)
+    contact_person = get_object_or_404(Contact_person, pk=contact_person_id)
+    
+    participate.contact_person_id = contact_person
+    
+    participate.save()
+    
+    return HttpResponse({1}, mimetype='application/json')
+
