@@ -8,13 +8,13 @@
 {% block content %}
 
     Visa kurs i overview:
-    <select>
+    <select id="course-select">
         {% for course in courses %}
             <option value="{{ course.id }}">{{ course.name }}</option>
         {% endfor %}
 
     </select>
-    <button class="btn btn-primary">Visa kurs i overview</button>
+    <button id="course-picker" class="btn btn-primary">Visa kurs i overview</button>
     {% for education in education %}
         <h1>{{ education.name }}</h1>
         {% for classs in class %}
@@ -43,7 +43,7 @@
 
                         </select>
 
-                        <button id="connect" class="btn btn-primary">Koppla klass till kurs</button>
+                        <button id="connect" class="btn btn-primary connecter">Koppla klass till kurs</button>
                         <hr>
 
                     </div>
