@@ -1,7 +1,7 @@
 {% extends "createpage/createpage.html" %}
 
 {% block headermeny %}
-<li><a href="/createpage/">Create</a> <span class="divider">/</span></li>
+<li><a href="/createpage/">Skapa</a> <span class="divider">/</span></li>
 <li class="active">Student</li>
 {% endblock %}
 
@@ -10,7 +10,7 @@
 <div>
     <form action="/createpage/createstudent" method="post">{% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="Submit" class="btn"/>
+        <input type="submit" value="Lägg till" class="btn"/>
     </form>
 </div>
 
