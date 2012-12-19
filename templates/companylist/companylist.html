@@ -31,6 +31,15 @@
 
     {% endfor %}
 
+    {% if company_wo_edu_list %}
+        <h2>Övriga</h2>
+            <ul>
+                {% for company in company_wo_edu_list %}
+                    <li><a href="/company/{{ company.id }}">{{ company.name }}</a></li>
+                {% endfor %}
+               </ul>
+    {% endif %}
+
 {% endblock %}
 {% block scripts %}
     <script src="/static/js/companylist/search.js"></script>
