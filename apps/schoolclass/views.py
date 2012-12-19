@@ -18,10 +18,8 @@ def school_class(request):
     New things for the steps
 
     """
-    participa = Participate.objects.all()
-    #step = Step.objects.all()
-    partzz = get_object_or_404(Course, pk=1)
-    #HARDCODED ONLY TO 1 course now!
+    participateObjects = Participate.objects.all()
+    getWantedCourse = Course.objects.latest('id') #Gets latest, should be a view to find selected also.
     participate_step = Participate_Step.objects.all().order_by('step_order')
 
     """
@@ -33,9 +31,9 @@ def school_class(request):
             , 'class':schoolclass_id
             , 'education':education_name
             , 'courses':courses
-            ,'partzz':partzz
-            ,'participa':participa
-            ,'part':participate_step
+            ,'wanted_course':getWantedCourse
+            ,'participates':participateObjects
+            ,'participate_step':participate_step
         },context_instance=RequestContext(request))
 
 
