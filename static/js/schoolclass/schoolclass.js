@@ -1,4 +1,4 @@
-$('#connect').click(function(){
+$('.connecter').click(function(){
     var idz = $(this).parents().parents().attr('id');
     console.log(idz);
     var classVal = $('#classSelect').val();
@@ -28,5 +28,14 @@ $('.label').click(function(){
 
 
     });
+
+});
+
+$('#course-picker').click(function(){
+    var courseid = $('#course-select').val();
+    console.log(courseid);
+
+    window.location.href='/schoolclass/'+courseid+'/';
+
 
 });

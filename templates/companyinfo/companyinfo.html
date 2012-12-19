@@ -9,13 +9,17 @@
 {% block content %}
     <div class="company">
         <h2>{{ company.name }}</h2>
-        <form action="/company/{{ company.id }}" method="post" enctype="multipart/form-data">
+        <form id="editCompanyForm" action="/company/{{ company.id }}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <table>
                 {{ companyform.as_table }}
             </table><br>
-            <button type="submit" class="btn btn-primary">KLICKA PA MIG</button>
-            <button type="reset" class="btn btn-secondary">Ångra ändringar</button>
+
+
+            <button class="btn" id="edit" style="display:block">Redigera</button>
+            <button class="btn btn-primary" id="save" type="submit" style="display:none;float:left;">Spara</button>
+            <button class="btn" id="cancel" type="reset" style="display:none;float:left;margin-left:5px;">Avbryt</button>
+
         </form><br/><br/>
 
         {% if contactperson_list %}
@@ -71,4 +75,7 @@
             <p>Inga kontaktpersoner kopplade till företaget.</p>
         {% endif %}
     </div>
+{% endblock %}
+{% block scripts %}
+    <script type="text/javascript" src="/static/js/company/companyinfo.js"></script>
 {% endblock %}

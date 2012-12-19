@@ -9,13 +9,14 @@ from django.contrib.auth.decorators import login_required
 @login_required
 def companyList(request):
     education_list = Education.objects.all()
-    company_list = Company.objects.all()
+    company_list = Company.objects.all().order_by('name')
+    company_wo_educ = Company.objects.filter(education__isnull=True).order_by('name')
 
     return render_to_response('companylist/companylist.html',
         {
             'education_list': education_list
             ,'company_list': company_list
-
+            ,'company_wo_edu_list': company_wo_educ
         },
         context_instance=RequestContext(request))
 
