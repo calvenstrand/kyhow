@@ -85,7 +85,7 @@
 
                                             <td class="center">
                                                 {% for participate_object in participates %}
-                                                    {% if participate_object.student_id == student %}
+                                                    {% if participate_object.student_id == student and participate_object.course_id == wanted_course %}
                                                         {% for step in participate_step %}
                                                             {% if participate_object == step.participate %}
                                                                 {% if step.done %}
