@@ -18,13 +18,15 @@ $('#edit').click(function (e) {
 })
 
 $('#cancel').click(function (e) {
-    $('#editCompanyForm').find(':input').each(function () {
-        $(this).attr('disabled', 'disabled');
-    })
-    $('#edit').removeAttr('disabled');
-    $('#edit').css('display', 'block');
-    $('#save').css('display', 'none');
-    $('#cancel').css('display', 'none');
+    setTimeout(function () {
+        $('#editCompanyForm').find(':input').each(function () {
+            $(this).attr('disabled', 'disabled');
+        })
+        $('#edit').removeAttr('disabled');
+        $('#edit').css('display', 'block');
+        $('#save').css('display', 'none');
+        $('#cancel').css('display', 'none');
+    }, 1)
 });
 
 });

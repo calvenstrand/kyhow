@@ -993,3 +993,7 @@ select[disabled] option {
     background: #eee;
     color: #000;
 }
+
+.cursor-fix {
+    cursor: pointer;
+}

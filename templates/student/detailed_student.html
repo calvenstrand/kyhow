@@ -5,9 +5,7 @@
 <li class="active">Studentinformation</li>
 {% endblock %}
 
-{% block scripts %}
-    <script type="text/javascript" src="/static/js/student/student.js"></script>
-{% endblock %}
+
 {% block content %}
     {% if student %}
     <div class="company">
@@ -86,9 +84,9 @@
                         {% for step in part %}
                             {% if step.participate == something %}
                                 {% if step.done %}
-                                    <span id="{{ step.id }}" class="label label-success">
+                                    <span id="{{ step.id }}" class="label label-success cursor-fix">
                                 {% else %}
-                                    <span id="{{ step.id }}" class="label label-important">
+                                    <span id="{{ step.id }}" class="label label-important cursor-fix">
                                     {% endif %}
 
                                 {{ step.name }}
@@ -115,4 +113,9 @@
     {% else %}
         <p>Något gick fruktansvärt fel...</p>
     {% endif %}
+{% endblock %}
+
+
+{% block scripts %}
+    <script type="text/javascript" src="/static/js/student/student.js"></script>
 {% endblock %}

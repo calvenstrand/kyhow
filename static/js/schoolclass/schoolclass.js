@@ -18,9 +18,9 @@ $('.label').click(function(){
 
     $.post('/changestep/'+idzz+'/', function(data) {
         if(data === 0){
-            $('#'+idzz).attr('class' ,'label label-important');
+            $('#'+idzz).attr('class' ,'label label-important cursor-fix');
         }else if(data === 1){
-            $('#'+idzz).attr('class' ,'label label label-success');
+            $('#'+idzz).attr('class' ,'label label label-success cursor-fix');
 
         }
 

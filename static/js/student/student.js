@@ -16,16 +16,17 @@ $(function () {
         $('#cancel').css('display', 'block');
     })
 
-    $('#cancel').click(function (e) {
-        $('#editStudentForm').find(':input').each(function () {
-            $(this).attr('disabled', 'disabled');
-        })
-        $('#edit').removeAttr('disabled');
-        $('#edit').css('display', 'block');
-        $('#save').css('display', 'none');
-        $('#cancel').css('display', 'none');
+    $('#cancel').click(function () {
+        setTimeout(function () {
+            $('#editStudentForm').find(':input').each(function () {
+                $(this).attr('disabled', 'disabled');
+            })
+            $('#edit').removeAttr('disabled');
+            $('#edit').css('display', 'block');
+            $('#save').css('display', 'none');
+            $('#cancel').css('display', 'none');
+        }, 1)
     })
-
 
     //dj mouse ajax for clicking steps
     $('.label').click(function(){
@@ -34,9 +35,9 @@ $(function () {
 
         $.post('/changestep/'+idzz+'/', function(data) {
             if(data === 0){
-                $('#'+idzz).attr('class' ,'label label-important');
+                $('#'+idzz).attr('class' ,'label label-important cursor-fix');
             }else if(data === 1){
-                $('#'+idzz).attr('class' ,'label label label-success');
+                $('#'+idzz).attr('class' ,'label label label-success cursor-fix');
 
             }
 
@@ -48,7 +49,7 @@ $(function () {
     });
 
     
-    //funktion för val av företag
+    //funktion fï¿½r val av fï¿½retag
     $('#select_company').change(function(){
 
         var participate = $('#participate_hid').val();
@@ -63,7 +64,7 @@ $(function () {
     });
     
     
-    //funktion för val av kontaktperson
+    //funktion fï¿½r val av kontaktperson
     $('#select_contact_person').change(function(){
 
         var participate = $('#participate_hid').val();
