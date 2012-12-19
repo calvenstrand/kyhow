@@ -8,18 +8,19 @@
 {% block content %}
 
     Visa kurs i overview:
-    <select>
+    <select id="course-select">
         {% for course in courses %}
             <option value="{{ course.id }}">{{ course.name }}</option>
         {% endfor %}
 
     </select>
-    <button class="btn btn-primary">Visa kurs i overview</button>
+    <button id="course-picker" class="btn btn-primary">Visa kurs i overview</button>
     {% for education in education %}
         <h1>{{ education.name }}</h1>
         {% for classs in class %}
             {% if classs.education_id.name == education.name %}
                 <!-- RASMUS POPUP-->
+
 
                 <div id="schoolclass{{ classs.id }}" class="modal hide fade" tabindex="-1" role="dialog"
                      aria-labelledby="myModalLabel" aria-hidden="true">
@@ -41,7 +42,8 @@
 
 
                         </select>
-                        <button id="connect" class="btn btn-primary">Koppla klass till kurs</button>
+
+                        <button id="connect" class="btn btn-primary connecter">Koppla klass till kurs</button>
                         <hr>
 
                     </div>
@@ -85,7 +87,7 @@
 
                                             <td class="center">
                                                 {% for participate_object in participates %}
-                                                    {% if participate_object.student_id == student %}
+                                                    {% if participate_object.student_id == student and participate_object.course_id == wanted_course %}
                                                         {% for step in participate_step %}
                                                             {% if participate_object == step.participate %}
                                                                 {% if step.done %}
