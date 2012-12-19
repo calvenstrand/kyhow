@@ -986,3 +986,8 @@ footer {
     padding: 20px;
     width:260px;
 }
+
+select[disabled] {
+    background: #eee;
+    color: #fff;
+}
