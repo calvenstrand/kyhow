@@ -1,4 +1,11 @@
 $(document).ready(function() {
+    // Function to log out user if inactive for 30 minutes
+    setTimeout(function(){
+        alert("DU HAR VARIT INAKTIV I 30 MINUTER! DU HAR BLIVIT UTLOGGAD!");
+        window.location.href = '/accounts/logout/';
+    },1800000);//30 minutes
+
+    //End of logout function
     /* DJ MUS AJAX */
     $.ajaxSetup({
         beforeSend: function(xhr, settings) {
