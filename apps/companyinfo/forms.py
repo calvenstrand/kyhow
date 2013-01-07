@@ -12,8 +12,10 @@ class CompanyForm(ModelForm):
         self.fields['description'].label = 'Beskrivning'
         self.fields['education'].label = 'Utbildning'
         self.fields['education'].help_text = 'Håll ned "Control", eller "Command" på en Mac, för att välja fler än en.'
+        self.fields["education_id"].queryset = Education.objects.all().order_by('name')
         self.fields['tags'].label = 'Taggar'
         self.fields['tags'].help_text = 'Håll ned "Control", eller "Command" på en Mac, för att välja fler än en.'
+        self.fields["tags"].queryset = Tag.objects.all().order_by('name')
     #Exclude id and change tag of description
     class Meta:
         model = Company

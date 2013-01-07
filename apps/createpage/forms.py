@@ -1,5 +1,5 @@
 #encoding=utf-8
-from django.forms import ModelForm
+from django.forms import ModelForm, ModelMultipleChoiceField
 from models import Schoolclass, Company, Contact_person, Course, Education, Step, Student, Tag
 
 class SchoolclassForm(ModelForm):
@@ -7,6 +7,7 @@ class SchoolclassForm(ModelForm):
         super(SchoolclassForm, self).__init__(*args, **kwargs)
         self.fields['name'].label = 'Namn'
         self.fields['education_id'].label = 'Utbildning'
+        self.fields["education_id"].queryset = Education.objects.all().order_by('name')
 
     class Meta:
         model = Schoolclass
@@ -22,8 +23,10 @@ class CompanyForm(ModelForm):
         self.fields['description'].label = 'Beskrivning'
         self.fields['education'].label = 'Utbildning'
         self.fields['education'].help_text = 'Håll ned "Control", eller "Command" på en Mac, för att välja fler än en.'
+        self.fields["education"].queryset = Education.objects.all().order_by('name')
         self.fields['tags'].label = 'Taggar'
         self.fields['tags'].help_text = 'Håll ned "Control", eller "Command" på en Mac, för att välja fler än en.'
+        self.fields["tags"].queryset = Tag.objects.all().order_by('name')
 
     class Meta:
         model = Company
@@ -31,6 +34,7 @@ class CompanyForm(ModelForm):
 class Contact_personForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super(Contact_personForm, self).__init__(*args, **kwargs)
+        fields = ('company_id')
         self.fields['first_name'].label = 'Förnamn'
         self.fields['last_name'].label = 'Efternamn'
         self.fields['title'].label = 'Titel'
@@ -38,6 +42,7 @@ class Contact_personForm(ModelForm):
         self.fields['email'].label = 'Email'
         self.fields['description'].label = 'Beskrivning'
         self.fields['company_id'].label = 'Företag'
+        self.fields["company_id"].queryset = Company.objects.all().order_by('name')
 
     class Meta:
         model = Contact_person
@@ -68,6 +73,7 @@ class StepForm(ModelForm):
         self.fields['step_order'].label = 'Stegordning'
         self.fields['description'].label = 'Beskrivning'
         self.fields['course_id'].label = 'Kurs'
+        self.fields["course_id"].queryset = Course.objects.all().order_by('name')
 
     class Meta:
         model = Step
@@ -80,6 +86,7 @@ class StudentForm(ModelForm):
         self.fields['address'].label = 'Adress'
         self.fields['phone_number'].label = 'Telefonnummer'
         self.fields['schoolclass_id'].label = 'Klass'
+        self.fields["schoolclass_id"].queryset = Schoolclass.objects.all().order_by('name')
 
     class Meta:
         model = Student
