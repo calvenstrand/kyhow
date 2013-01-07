@@ -48,3 +48,5 @@ kyhow/settings.py
 # Database file #
 #################
 
+
+*.pyc
