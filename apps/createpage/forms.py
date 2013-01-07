@@ -51,7 +51,6 @@ class CourseForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super(CourseForm, self).__init__(*args, **kwargs)
         self.fields['name'].label = 'Namn'
-        self.fields['description'].label = 'Beskrivning'
         self.fields['teacher'].label = 'Lärare'
 
     class Meta:
@@ -61,7 +60,6 @@ class EducationForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super(EducationForm, self).__init__(*args, **kwargs)
         self.fields['name'].label = 'Namn'
-        self.fields['description'].label = 'Beskrivning'
 
     class Meta:
         model = Education
