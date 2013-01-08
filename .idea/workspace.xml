@@ -23,7 +23,7 @@
       <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apps/student/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="12" selection-start="1920" selection-end="1920" vertical-scroll-proportion="0.0">
+            <state line="31" column="29" selection-start="1361" selection-end="1361" vertical-scroll-proportion="-14.28">
               <folding />
             </state>
           </provider>
@@ -33,15 +33,6 @@
         <entry file="file://$PROJECT_DIR$/apps/companyinfo/forms.py">
           <provider selected="true" editor-type-id="text-editor">
             <state line="12" column="44" selection-start="584" selection-end="584" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/schoolclass/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="28" selection-start="2674" selection-end="2674" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -59,16 +50,16 @@
       <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="30" selection-start="30" selection-end="30" vertical-scroll-proportion="0.0">
+            <state line="5" column="27" selection-start="94" selection-end="273" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="search.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/js/companylist/search.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="12" selection-start="488" selection-end="488" vertical-scroll-proportion="1.3938224">
+            <state line="23" column="85" selection-start="747" selection-end="747" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -86,7 +77,19 @@
       <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+            <state line="112" column="36" selection-start="3902" selection-end="3902" vertical-scroll-proportion="3.6470587">
+              <folding>
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#body#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="49" column="1" selection-start="545" selection-end="545" vertical-scroll-proportion="0.78711987">
               <folding />
             </state>
           </provider>
@@ -95,12 +98,8 @@
       <file leaf-file-name="room.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/schoolclass/room.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="96" column="74" selection-start="4497" selection-end="4497" vertical-scroll-proportion="-2.6153846">
-              <folding>
-                <marker date="1357556382348" expanded="true" signature="242:361" placeholder="{% for course in courses ... %}" />
-                <marker date="1357556382348" expanded="true" signature="584:5718" placeholder="{% if classs.education_id.name == education.name ... %}" />
-                <marker date="1357556382348" expanded="true" signature="1608:1767" placeholder="{% for course in courses ... %}" />
-              </folding>
+            <state line="107" column="0" selection-start="5184" selection-end="5184" vertical-scroll-proportion="-1.0384616">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -126,7 +125,6 @@
       <list>
         <option value="$PROJECT_DIR$/static/js/student/student.js" />
         <option value="$PROJECT_DIR$/apps/createpage/models.py" />
-        <option value="$PROJECT_DIR$/apps/student/views.py" />
         <option value="$PROJECT_DIR$/kyhow/urls.py" />
         <option value="$PROJECT_DIR$/apps/schoolclass/views.py" />
         <option value="$PROJECT_DIR$/static/js/company/company.js" />
@@ -137,17 +135,18 @@
         <option value="$PROJECT_DIR$/static/js/schoolclass/schoolclass.js" />
         <option value="$PROJECT_DIR$/templates/schoolclass/room.html" />
         <option value="$PROJECT_DIR$/kyhow/settings.py" />
-        <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/apps/student/views.py" />
         <option value="$PROJECT_DIR$/static/js/main.js" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="41" />
-    <option name="y" value="114" />
-    <option name="width" value="819" />
-    <option name="height" value="484" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -748,14 +747,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="41" y="114" width="819" height="484" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2681638" sideWeight="0.6712329" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15378788" sideWeight="0.6712329" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -823,11 +822,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/apps/createpage/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="49" selection-start="579" selection-end="579" vertical-scroll-proportion="-0.68" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/kyhow/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="31" column="92" selection-start="1891" selection-end="1891" vertical-scroll-proportion="-14.88">
@@ -870,13 +864,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/student/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="12" selection-start="1920" selection-end="1920" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/companyinfo/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="44" selection-start="584" selection-end="584" vertical-scroll-proportion="0.0">
@@ -891,27 +878,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/schoolclass/room.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="74" selection-start="4497" selection-end="4497" vertical-scroll-proportion="-2.6153846">
-          <folding>
-            <marker date="1357556382348" expanded="true" signature="242:361" placeholder="{% for course in courses ... %}" />
-            <marker date="1357556382348" expanded="true" signature="584:5718" placeholder="{% if classs.education_id.name == education.name ... %}" />
-            <marker date="1357556382348" expanded="true" signature="1608:1767" placeholder="{% for course in courses ... %}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/kyhow/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="129" column="27" selection-start="4665" selection-end="4665" vertical-scroll-proportion="-4.76">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -923,16 +892,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/schoolclass/room.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="107" column="0" selection-start="5184" selection-end="5184" vertical-scroll-proportion="-1.0384616">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/companylist/search.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="85" selection-start="747" selection-end="747" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="30" selection-start="30" selection-end="30" vertical-scroll-proportion="0.0">
+        <state line="5" column="27" selection-start="94" selection-end="273" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/student/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="29" selection-start="1361" selection-end="1361" vertical-scroll-proportion="-14.28">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="112" column="36" selection-start="3902" selection-end="3902" vertical-scroll-proportion="3.6470587">
+          <folding>
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="12" selection-start="488" selection-end="488" vertical-scroll-proportion="1.3938224">
+        <state line="49" column="1" selection-start="545" selection-end="545" vertical-scroll-proportion="0.78711987">
           <folding />
         </state>
       </provider>

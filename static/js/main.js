@@ -6,6 +6,22 @@ $(document).ready(function() {
     },1800000);//30 minutes
 
     //End of logout function
+
+    //
+    // Notificationaktiverare
+    $("#container").notify();
+    /* TO DO A NOTIFICATION!
+     $("#container").notify("create", {
+     title: 'Test Notification',
+     text: 'This is an example of the default config, and will fade out after five seconds.'
+     });
+
+
+     */
+
+    //Slut notificationaktiverare
+
+
     /* DJ MUS AJAX */
     $.ajaxSetup({
         beforeSend: function(xhr, settings) {

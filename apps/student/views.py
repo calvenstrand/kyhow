@@ -21,13 +21,15 @@ def detailed_student(request, student_id):
         if form.is_valid():
             edit_form = form.save(commit=False)
             edit_form.save()
+            answer = 1;
         return render_to_response('student/detailed_student.html', {
             'companies': companies,
             'contact_persons': contact_persons,
             'edit_form': form,
             'part': participate_step,
             'student': student,
-            'participants': participants
+            'participants': participants,
+            'answer' : answer
         }, context_instance=RequestContext(request))
     else:
         form = EditStudentForm(instance=student)

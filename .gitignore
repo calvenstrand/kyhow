@@ -47,4 +47,4 @@ kyhow/settings.py
 
 # Database file #
 #################
-
+*.db

@@ -12,6 +12,7 @@
 	    <meta name="viewport" content="width=device-width">
 
 	    <link rel="stylesheet" href="/static/css/bootstrap.css">
+        <link rel="stylesheet" href="/static/css/ui.notify.css">
 	    <link rel="stylesheet" href="/static/css/main.css">
 
 	    <script src="/static/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
@@ -23,7 +24,7 @@
             }
 
         </style>
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/static/css/jquery-ui-1.9.2.custom.css">
 	</head>
 	<body>
 <body>
@@ -81,7 +82,8 @@
 
 
 		</footer>
-				
+
+
 	</div><!--/.fluid-container-->
         
     <!-- Le javascript
@@ -90,13 +92,55 @@
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="static/js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
-    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <script src="/static/js/vendor/jquery-ui-1.9.2.custom.min.js"></script>
     <script src="/static/js/vendor/bootstrap.min.js"></script>
     <script src="/static/js/vendor/jquery.dataTables.js"></script>
     <script src="/static/js/main.js"></script>
+    <script src="/static/js/vendor/jquery.notify.min.js"></script>
     {% block scripts %}
     {% endblock %}
+    {% if answer > 0  %}
+        <!-- set the container hidden to avoid a flash of unstyled content
+   when the page first loads -->
+        <div id="container" style="display:none">
 
+            <!--
+            Later on, you can choose which template to use by referring to the
+            ID assigned to each template.  Alternatively, you could refer
+            to each template by index, so in this example, "basic-tempate" is
+            index 0 and "advanced-template" is index 1.
+            -->
+            <div id="basic-template">
+                <a class="ui-notify-cross ui-notify-close" href="#">x</a>
+                <h1>#{title}</h1>
+                <p>#{text}</p>
+            </div>
+
+            <div id="advanced-template">
+                <!-- ... you get the idea ... -->
+            </div>
+
+        </div>
+        <script>
+            function notifys(number){
+                if (number === 1){
+                    $("#container").notify("create", {
+                        title: 'Formulär sparades!',
+                        text: ''
+                    });
+                }else if(number === 2){
+                    $("#container").notify("create", {
+                        title: '2',
+                        text: 'This is an example of the default config, and will fade out after five seconds.'
+                    });
+                }
+            }
+            setTimeout(function(){
+                notifys({{ answer }});
+            },1);//30 minutes
+
+             </script>
+    {% endif %}
 
     </body>
 </html>
