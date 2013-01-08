@@ -11,6 +11,8 @@ $(function () {
         $('#editStudentForm').find(':input').each(function() {
             $(this).removeAttr('disabled');
         })
+        $('#emailLink').css('display', 'none');
+        $('#emailEdit').css('display', 'block');
         $('#edit').css('display', 'none');
         $('#save').css('display', 'block');
         $('#cancel').css('display', 'block');
@@ -21,6 +23,8 @@ $(function () {
             $('#editStudentForm').find(':input').each(function () {
                 $(this).attr('disabled', 'disabled');
             })
+            $('#emailEdit').css('display', 'none');
+            $('#emailLink').css('display', 'block');
             $('#edit').removeAttr('disabled');
             $('#edit').css('display', 'block');
             $('#save').css('display', 'none');
@@ -40,7 +44,7 @@ $(function () {
                 $('#'+idzz).attr('class' ,'label label label-success cursor-fix');
 
             }
-
+            notifys.notify(2);
             console.log(data);
 
 

@@ -1,3 +1,8 @@
+$(function () {
+    // do stuff after DOM has loaded
+
+
+
 $('.connecter').click(function(){
     var idz = $(this).parents().parents().attr('id');
     console.log(idz);
@@ -24,7 +29,7 @@ $('.label').click(function(){
             $('#'+idzz).attr('class' ,'label label label-success cursor-fix');
 
         }
-        notifys(2);
+        notifys.notify(2);
         console.log(data);
 
 
@@ -38,5 +43,8 @@ $('#course-picker').click(function(){
 
     window.location.href='/schoolclass/'+courseid+'/';
 
+
+});
+    notifys.notify(3); //Visa vilken kurs man läser
 
 });
