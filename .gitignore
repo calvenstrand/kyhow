@@ -33,7 +33,7 @@
 *.sql
 *.sqlite
 *.sqlite3
-
+*.db
 
 # OS generated files #
 ######################
@@ -43,10 +43,8 @@
 
 # Settings #
 ############
-kyhow/settings.py
+# kyhow/settings.py
 
 # Database file #
 #################
-
-
-*.pyc
+databas_kyh.db
