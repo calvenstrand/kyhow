@@ -97,50 +97,77 @@
     <script src="/static/js/vendor/jquery.dataTables.js"></script>
     <script src="/static/js/main.js"></script>
     <script src="/static/js/vendor/jquery.notify.min.js"></script>
-    {% block scripts %}
-    {% endblock %}
-    {% if answer > 0  %}
-        <!-- set the container hidden to avoid a flash of unstyled content
-   when the page first loads -->
-        <div id="container" style="display:none">
+    <script>
+        var notifys = {
+            init : function( options ) {  },
+            show : function( options ) {  },
+            hide : function( ) {  },
+            notify : function( number ) {
 
-            <!--
-            Later on, you can choose which template to use by referring to the
-            ID assigned to each template.  Alternatively, you could refer
-            to each template by index, so in this example, "basic-tempate" is
-            index 0 and "advanced-template" is index 1.
-            -->
-            <div id="basic-template">
-                <a class="ui-notify-cross ui-notify-close" href="#">x</a>
-                <h1>#{title}</h1>
-                <p>#{text}</p>
-            </div>
-
-            <div id="advanced-template">
-                <!-- ... you get the idea ... -->
-            </div>
-
-        </div>
-        <script>
-            function notifys(number){
                 if (number === 1){
-                    $("#container").notify("create", {
+                    $("#container").notify("create", "notify-green", {
                         title: 'Formulär sparades!',
                         text: ''
                     });
                 }else if(number === 2){
-                    $("#container").notify("create", {
+                    $("#container").notify("create", "notify-green" , {
                         title: 'Inlämningsstatusen förändrades utan fel!',
+                        text: ''
+                    });
+                }else if(number === 3){
+                    $("#container").notify("create" , {
+                        title: 'Visar kurs: '+ $('.content').children('b').first().text() +'!',
                         text: ''
                     });
                 }
             }
+        }
+
+        ///
+
+
+    </script>
+    <!-- set the container hidden to avoid a flash of unstyled content
+   when the page first loads -->
+    <div id="container" style="display:none">
+
+        <!--
+        Later on, you can choose which template to use by referring to the
+        ID assigned to each template.  Alternatively, you could refer
+        to each template by index, so in this example, "basic-tempate" is
+        index 0 and "advanced-template" is index 1.
+        -->
+        <div id="basic-template">
+            <a class="ui-notify-cross ui-notify-close" href="#">x</a>
+            <h1>#{title}</h1>
+            <p>#{text}</p>
+        </div>
+
+        <div id="notify-green" class="notify-green">
+            <a class="ui-notify-cross ui-notify-close" href="#">x</a>
+            <h1>#{title}</h1>
+            <!-- ... you get the idea ... -->
+        </div>
+
+        <div id="course-notify" class="notify-green">
+            <a class="ui-notify-cross ui-notify-close" href="#">x</a>
+            <h1>#{title}</h1>
+            <!-- ... you get the idea ... -->
+        </div>
+
+    </div>
+
+    {% if answer > 0  %}
+
+        <script>
+
             setTimeout(function(){
-                notifys({{ answer }});
+                notifys.notify({{ answer }});
             },1);//30 minutes
 
              </script>
     {% endif %}
-
+    {% block scripts %}
+    {% endblock %}
     </body>
 </html>

@@ -40,7 +40,7 @@ $(function () {
                 $('#'+idzz).attr('class' ,'label label label-success cursor-fix');
 
             }
-
+            notifys.notify(2);
             console.log(data);
 
 
