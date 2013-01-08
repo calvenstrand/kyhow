@@ -11,8 +11,8 @@ from django.contrib.auth.decorators import login_required
 @login_required
 def detailed_student(request, student_id):
     student = get_object_or_404(Student, pk=student_id)
-    companies = Company.objects.all()
-    contact_persons = Contact_person.objects.all()
+    companies = Company.objects.all().order_by('name')
+    contact_persons = Contact_person.objects.all().order_by('first_name')
     participants = Participate.objects.filter(student_id=student)
     participate_step = Participate_Step.objects.all().order_by('step_order')
 

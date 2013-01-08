@@ -22,7 +22,7 @@ class Schoolclass(models.Model):
 
 class Education(models.Model):
     name = models.CharField(max_length=60)
-    description = models.CharField(max_length=5000, blank=True)
+    
     
     
     def __unicode__(self):
@@ -63,7 +63,6 @@ class Tag(models.Model):
 
 class Course(models.Model):
     name = models.CharField(max_length=60)
-    description = models.CharField(max_length=5000, blank=True)
     teacher = models.CharField(max_length=60, blank=True)    
     
     
