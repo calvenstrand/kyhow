@@ -38,10 +38,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="schoolclass.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="schoolclass.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/js/schoolclass/schoolclass.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="19" selection-start="755" selection-end="755" vertical-scroll-proportion="0.36135957">
+            <state line="26" column="19" selection-start="755" selection-end="755" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -86,10 +86,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="22" selection-start="357" selection-end="357" vertical-scroll-proportion="0.0">
+            <state line="45" column="19" selection-start="512" selection-end="512" vertical-scroll-proportion="1.3685153">
               <folding />
             </state>
           </provider>
@@ -857,13 +857,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/schoolclass/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="28" selection-start="2674" selection-end="2674" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/companyinfo/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="44" selection-start="584" selection-end="584" vertical-scroll-proportion="0.0">
@@ -906,13 +899,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="22" selection-start="357" selection-end="357" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="39" selection-start="440" selection-end="440" vertical-scroll-proportion="0.0">
@@ -932,7 +918,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/js/schoolclass/schoolclass.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="19" selection-start="755" selection-end="755" vertical-scroll-proportion="0.36135957">
+        <state line="26" column="19" selection-start="755" selection-end="755" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="19" selection-start="512" selection-end="512" vertical-scroll-proportion="1.3685153">
           <folding />
         </state>
       </provider>
