@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block headermeny %}
-<li><a href="/company/">Företag</a> <span class="divider">/</span></li>
+<li xmlns="http://www.w3.org/1999/html"><a href="/schoolclass/">Företag</a> <span class="divider">/</span></li>
 <li class="active">Företagsinformation</li>
 {% endblock %}
 
@@ -12,7 +12,22 @@
         <form id="editCompanyForm" action="/company/{{ company.id }}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <table>
-                {{ companyform.as_table }}
+                {% for field in companyform %}
+                    <tr>
+                        {% if field.label == 'Email' %}
+                            <th>{{ field.label_tag }}</th>
+                            <td id="emailLink"><a href='mailto:{{ field.value }}'>{{ field.value }}</a></td>
+                            <td id="emailEdit" style="display:none;">{{ field }}</td>
+                        {% elif field.label == 'Hemsida' %}
+                            <th>{{ field.label_tag }}</th>
+                            <td id="websiteLink"><a href='{{ field.value }}'>{{ field.value }}</a></td>
+                            <td id="websiteEdit" style="display:none;">{{ field }}</td>
+                        {% else %}
+                            <th>{{ field.label_tag }}</th>
+                            <td>{{ field }}</td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
             </table><br>
 
 
