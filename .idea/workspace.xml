@@ -59,7 +59,7 @@
       <file leaf-file-name="search.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/js/companylist/search.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="85" selection-start="747" selection-end="747" vertical-scroll-proportion="0.0">
+            <state line="26" column="0" selection-start="766" selection-end="766" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -89,7 +89,7 @@
       <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="1" selection-start="545" selection-end="545" vertical-scroll-proportion="0.78711987">
+            <state line="37" column="22" selection-start="417" selection-end="417" vertical-scroll-proportion="0.39177102">
               <folding />
             </state>
           </provider>
@@ -852,7 +852,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="0" selection-start="115" selection-end="115" vertical-scroll-proportion="0.0">
           <folding>
-            <marker date="1355926081816" expanded="true" signature="628:636" placeholder="{...}" />
+            <marker date="1357638911453" expanded="true" signature="628:636" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -901,7 +901,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/js/companylist/search.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="85" selection-start="747" selection-end="747" vertical-scroll-proportion="0.0">
+        <state line="26" column="0" selection-start="766" selection-end="766" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -932,7 +932,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="1" selection-start="545" selection-end="545" vertical-scroll-proportion="0.78711987">
+        <state line="37" column="22" selection-start="417" selection-end="417" vertical-scroll-proportion="0.39177102">
           <folding />
         </state>
       </provider>
