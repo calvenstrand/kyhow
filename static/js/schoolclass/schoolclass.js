@@ -24,7 +24,7 @@ $('.label').click(function(){
             $('#'+idzz).attr('class' ,'label label label-success cursor-fix');
 
         }
-
+        notifys(2);
         console.log(data);
 
 
