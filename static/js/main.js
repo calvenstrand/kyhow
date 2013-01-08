@@ -1,4 +1,27 @@
 $(document).ready(function() {
+    // Function to log out user if inactive for 30 minutes
+    setTimeout(function(){
+        alert("DU HAR VARIT INAKTIV I 30 MINUTER! DU HAR BLIVIT UTLOGGAD!");
+        window.location.href = '/accounts/logout/';
+    },1800000);//30 minutes
+
+    //End of logout function
+
+    //
+    // Notificationaktiverare
+    $("#container").notify();
+    /* TO DO A NOTIFICATION!
+     $("#container").notify("create", {
+     title: 'Test Notification',
+     text: 'This is an example of the default config, and will fade out after five seconds.'
+     });
+
+
+     */
+
+    //Slut notificationaktiverare
+
+
     /* DJ MUS AJAX */
     $.ajaxSetup({
         beforeSend: function(xhr, settings) {

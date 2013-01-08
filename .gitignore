@@ -48,3 +48,8 @@
 # Database file #
 #################
 databas_kyh.db
+
+
+*.db
+
+*.pyc

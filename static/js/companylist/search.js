@@ -25,5 +25,8 @@ $(function () {
         }
     });
 
+    $("#backtolist").click(function () {
+        window.location.href = "/company/";
+    });
 
 });
