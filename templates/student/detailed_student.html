@@ -38,8 +38,8 @@
                     
                     
                     <td>
-                        <input type="hidden" id="participate_hid" value="{{something.id}}">
-                        <select id="select_company">
+                        <input type="hidden" class="participate_hid" value="{{something.id}}">
+                        <select class="select_company">
                             <option value="välj Företag">Välj Företag</option>
                             {% for companies in companies %}
                                 {% if companies.id == something.company_id.id %}
@@ -58,7 +58,8 @@
                     
                     
                     <td>
-                        <select id="select_contact_person">
+                        <input type="hidden" class="participate_hid" value="{{something.id}}">
+                        <select class="select_contact_person">
                             <option value="välj kontakt person">Välj kontakt person</option>
                             {% for contact_persons in contact_persons %}
                                 {% if contact_persons.company_id.id == something.company_id.id %}

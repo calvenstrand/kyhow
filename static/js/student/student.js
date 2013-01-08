@@ -50,10 +50,10 @@ $(function () {
 
     
     //funktion f�r val av f�retag
-    $('#select_company').change(function(){
+    $('.select_company').change(function(){
 
-        var participate = $('#participate_hid').val();
-        var company = $('#select_company').val();
+        var participate = $(this).siblings('.participate_hid').val();
+        var company = $(this).val();
         
         $.post('/changecompany/'+participate+'/'+company+'/', function(data) {
         
@@ -65,10 +65,10 @@ $(function () {
     
     
     //funktion f�r val av kontaktperson
-    $('#select_contact_person').change(function(){
+    $('.select_contact_person').change(function(){
 
-        var participate = $('#participate_hid').val();
-        var contact_person = $('#select_contact_person').val();
+        var participate = $(this).siblings('.participate_hid').val();
+        var contact_person = $(this).val();
         
         $.post('/changecontactperson/'+participate+'/'+contact_person+'/', function(data) {
         
