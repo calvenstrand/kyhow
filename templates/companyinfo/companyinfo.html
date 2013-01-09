@@ -60,7 +60,7 @@
                             </tr>
                         </tbody>
                     {% endfor %}
-                    <br><button class="btn" id="create" style="display:block"><a href="{% url CreateNewCompany %}">skapa nya företag kontakt</a></button></br>
+                    <br><button class="btn btn-primary" id="create" style="display:block">skapa nya företagkontakt</a></button></br>
                     </table>
                     
                     <h2>Studenter som jobbat med {{company.name}}</h2>
@@ -89,7 +89,7 @@
 
         {% else %}
             <p>Inga kontaktpersoner kopplade till företaget.</p>
-            <br><button class="btn" id="create" style="display:block"><a href="{% url CreateNewCompany %}">skapa nya företag kontakt</a></button></br>
+            <br><button class="btn btn-primary" id="create" style="display:block">Skapa nya företagkontakt</a></button></br>
         {% endif %}
     </div>
 {% endblock %}
