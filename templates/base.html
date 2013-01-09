@@ -113,6 +113,10 @@
                         title: 'Inlämningsstatusen kunde inte förändras!',
                         text: ''
                     });
+                }else if(number === 5){
+                    $("#container").notify("create" ,"notify-red", {
+                        title: 'Du måste fylla i ett namn!',
+                    });
                 }
             }
         }
