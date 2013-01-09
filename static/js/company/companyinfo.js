@@ -39,10 +39,7 @@ $('#cancel').click(function (e) {
 
 $('#save').click(function (e) {
     if ($('#id_name').val() < 1) {
-        if ($('#cheat').length == 0) {
-            $('#id_name').before('<ul class="errorlist" id="cheat"><li>This field is required.</li></ul>');
-            notifys.notify(0);
-        }
+        notifys.notify(4);
         e.preventDefault();
     } else {
         // Carry on

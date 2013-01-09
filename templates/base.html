@@ -108,6 +108,11 @@
                         title: 'Formulär kunde inte sparas!',
                         text: ''
                     });
+                }else if(number === 4){
+                    $("#container").notify("create" ,"notify-red", {
+                        title: 'Du måste fylla i ett namn!',
+                        text: ''
+                    });
                 }
             }
         }

@@ -66,4 +66,14 @@ $(function () {
             location.reload();
         });
     });
+
+    $('#save').click(function (e) {
+        if ($('#id_name').val() < 1) {
+            notifys.notify(4);
+            e.preventDefault();
+        } else {
+            // Carry on
+        }
+    });
+
 })
