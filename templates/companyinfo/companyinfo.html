@@ -38,57 +38,63 @@
         </form><br/><br/>
 
         {% if contactperson_list %}
-
-
-                <div class="">
-                    <h2>Företagskontakter</h2>
-                    <hr>
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <td>Namn</td><td>Titel</td><td>Telefonnummer</td><td>Email</td><td>Beskrivning</td>
-                            </tr>
-                        </thead>
-                    {% for person in contactperson_list %}
-                        <tbody>
-                            <tr>
-                                <td>{{ person.first_name }} {{ person.last_name }}</td>
-                                <td>{{ person.title }}</td>
-                                <td>{{ person.phone_number }}</td>
-                                <td>{{ person.email }}</td>
-                                <td>{{ person.description }}</td>
-                            </tr>
-                        </tbody>
-                    {% endfor %}
-                    </table>
-                    
-                    <h2>Studenter som jobbat med {{company.name}}</h2>
-                    <hr>
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <td>Namn</td><td>Kurs</td><td>Kontaktperson</td>
-                            </tr>
-                        </thead>
-                    {% for Participate in Participate_list %}
-                        <tbody>
-                            {% if Participate.company_id.id  == company.id %}
-                            <tr>
-                                <td><a href="/student/{{Participate.student_id.id}}">{{ Participate.student_id.name }}</a></td>
-                                <td>{{ Participate.course_id.name }}</td>
-                                <td>{{ Participate.contact_person_id.first_name }} {{ Participate.contact_person_id.last_name }}</td>
-                                
-                            </tr>
-                            {% endif %}
-                        </tbody>
-                    {% endfor %}
-                    </table>
-                </div>
-
-
+            <div class="">
+                <h2>Företagskontakter</h2>
+                <hr>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <td>Namn</td><td>Titel</td><td>Telefonnummer</td><td>Email</td><td>Beskrivning</td>
+                        </tr>
+                    </thead>
+                {% for person in contactperson_list %}
+                    <tbody>
+                        <tr>
+                            <td>{{ person.first_name }} {{ person.last_name }}</td>
+                            <td>{{ person.title }}</td>
+                            <td>{{ person.phone_number }}</td>
+                            <td>{{ person.email }}</td>
+                            <td>{{ person.description }}</td>
+                        </tr>
+                    </tbody>
+                {% endfor %}
+                </table>
+            </div>
         {% else %}
             <p>Inga kontaktpersoner kopplade till företaget.</p>
         {% endif %}
+        
+        <br>
+        
+        {% if Participate_list %}
+            <div class="">
+                <h2>Studenter som jobbat med {{company.name}}</h2>
+                <hr>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <td>Namn</td><td>Kurs</td><td>Kontaktperson</td>
+                        </tr>
+                    </thead>
+                {% for Participate in Participate_list %}
+                    <tbody>
+                        <!--{% if Participate.company_id.id  == company.id %}-->
+                        <tr>
+                            <td><a href="/student/{{Participate.student_id.id}}">{{ Participate.student_id.name }}</a></td>
+                            <td>{{ Participate.course_id.name }}</td>
+                            <td>{{ Participate.contact_person_id.first_name }} {{ Participate.contact_person_id.last_name }}</td>
+                            
+                        </tr>
+                        {% endif %}
+                    </tbody>
+                {% endfor %}
+                </table>
+            </div>
+        {% else %}
+            <p>Inga Studenter har haft en kurs med företaget.</p>
+        {% endif %}
+        
+        
     </div>
 {% endblock %}
 {% block scripts %}

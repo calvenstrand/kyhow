@@ -13,7 +13,9 @@ def companyInfo(request, company_id):
 
     getCompany = get_object_or_404(Company, pk=company_id)
     contactperson_list = Contact_person.objects.filter(company_id=company_id)
-    Participate_list = Participate.objects.all()
+    #Participate_list = Participate.objects.all()
+    Participate_list = Participate.objects.filter(company_id=company_id)
+    
     if request.method == "POST":
 
         form = CompanyForm(request.POST, instance=getCompany or None)
