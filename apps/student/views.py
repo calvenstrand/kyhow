@@ -11,17 +11,19 @@ from django.contrib.auth.decorators import login_required
 @login_required
 def detailed_student(request, student_id):
     student = get_object_or_404(Student, pk=student_id)
-    companies = Company.objects.all()
-    contact_persons = Contact_person.objects.all()
+    companies = Company.objects.all().order_by('name')
+    contact_persons = Contact_person.objects.all().order_by('first_name')
     participants = Participate.objects.filter(student_id=student)
     participate_step = Participate_Step.objects.all().order_by('step_order')
 
     if request.method == 'POST':
         form = EditStudentForm(request.POST, instance=student or None)
+        answer = 0
         if form.is_valid():
             edit_form = form.save(commit=False)
             edit_form.save()
-            answer = 1;
+            answer = 1
+
         return render_to_response('student/detailed_student.html', {
             'companies': companies,
             'contact_persons': contact_persons,
