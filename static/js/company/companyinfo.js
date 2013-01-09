@@ -6,6 +6,7 @@ $('#editCompanyForm').find(':input').each(function () {
 })
 
 $('#edit').removeAttr('disabled');
+$('#create').removeAttr('disabled');
 
 $('#edit').click(function (e) {
     e.preventDefault();
@@ -39,7 +40,7 @@ $('#cancel').click(function (e) {
 
 $('#save').click(function (e) {
     if ($('#id_name').val() < 1) {
-        notifys.notify(4);
+        notifys.notify(5);
         e.preventDefault();
     } else {
         // Carry on

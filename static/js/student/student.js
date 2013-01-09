@@ -44,7 +44,14 @@ $(function () {
             }
             notifys.notify(2);
             console.log(data);
-        });
+
+
+
+        }).error(function(){
+                notifys.notify(4); //There was an error, throw error notification!
+            });
+
+
     });
     
     //funktion f�r val av f�retag
@@ -69,7 +76,7 @@ $(function () {
 
     $('#save').click(function (e) {
         if ($('#id_name').val() < 1) {
-            notifys.notify(4);
+            notifys.notify(5);
             e.preventDefault();
         } else {
             // Carry on
