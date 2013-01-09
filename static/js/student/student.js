@@ -1,5 +1,4 @@
 $(function () {
-
     $('#editStudentForm').find(':input').each(function () {
         $(this).attr('disabled', 'disabled');
     })
@@ -42,48 +41,36 @@ $(function () {
                 $('#'+idzz).attr('class' ,'label label-important cursor-fix');
             }else if(data === 1){
                 $('#'+idzz).attr('class' ,'label label label-success cursor-fix');
-
             }
             notifys.notify(2);
             console.log(data);
+
 
 
         }).error(function(){
                 notifys.notify(4); //There was an error, throw error notification!
             });
 
-    });
 
+    });
     
     //funktion f�r val av f�retag
     $('.select_company').change(function(){
-
         var participate = $(this).siblings('.participate_hid').val();
         var company = $(this).val();
         
         $.post('/changecompany/'+participate+'/'+company+'/', function(data) {
-        
-        location.reload();    
-            
+            location.reload();
         });
-
     });
-    
     
     //funktion f�r val av kontaktperson
     $('.select_contact_person').change(function(){
-
         var participate = $(this).siblings('.participate_hid').val();
         var contact_person = $(this).val();
         
         $.post('/changecontactperson/'+participate+'/'+contact_person+'/', function(data) {
-        
-        location.reload();    
-            
+            location.reload();
         });
-
     });
-    
-    
-
 })

@@ -1,19 +1,19 @@
 $(function () {
     // do stuff after DOM has loaded
+    $('.box-content').hide();
 
-
-
-$('.connecter').click(function(){
-    var idz = $(this).parents().parents().attr('id');
-    console.log(idz);
-    var classVal = $('#classSelect').val();
-    var courseVal = $('#courseSelect').val();
-    $.post('/mus/'+classVal+'/'+courseVal+'/', function(data) {
-        $('#'+idz).modal('hide')
-        location.reload();
-
+    $('.connecter').click(function(){
+        var idz = $(this).parents().parents().attr('id');
+        console.log(idz);
+        var classVal = $('#classSelect').val();
+        var courseVal = $('#courseSelect').val();
+        $.post('/mus/'+classVal+'/'+courseVal+'/', function(data) {
+            $('#'+idz).modal('hide')
+            location.reload();
+        });
 
     });
+
 
 });
 
@@ -37,17 +37,14 @@ $('.label').click(function(){
             notifys.notify(4); //There was an error, throw error notification!
         });
 
-});
 
-$('#course-picker').click(function(){
-    var courseid = $('#course-select').val();
-    console.log(courseid);
+    $('#course-picker').click(function(){
+        var courseid = $('#course-select').val();
+        console.log(courseid);
+        window.location.href='/schoolclass/'+courseid+'/';
+    });
 
-    window.location.href='/schoolclass/'+courseid+'/';
 
-
-});
 
     notifys.notify(3); //Visa vilken kurs man läser
-
 });
