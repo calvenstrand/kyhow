@@ -33,7 +33,9 @@ $('.label').click(function(){
         console.log(data);
 
 
-    });
+    }).error(function(){
+            notifys.notify(4); //There was an error, throw error notification!
+        });
 
 });
 
@@ -45,6 +47,7 @@ $('#course-picker').click(function(){
 
 
 });
+
     notifys.notify(3); //Visa vilken kurs man läser
 
 });

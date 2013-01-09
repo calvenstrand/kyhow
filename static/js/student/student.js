@@ -48,7 +48,9 @@ $(function () {
             console.log(data);
 
 
-        });
+        }).error(function(){
+                notifys.notify(4); //There was an error, throw error notification!
+            });
 
     });
 
