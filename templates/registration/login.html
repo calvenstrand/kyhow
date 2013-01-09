@@ -1,0 +1,40 @@
+{% extends "registration/registration_base.html" %}
+{% block title %}Inloggning{% endblock %}
+{% block body %}
+<div class="login">
+<form method="post" action="{% url django.contrib.auth.views.login %}">{% csrf_token %}
+<h1>Logga in</h1>
+<p>Logga in med ditt registrerade konto:</p>
+    <div class="control-group">
+    <label class="control-label" for="inputIcon">Användarnamn</label>
+    
+    <div class="controls">
+    <div class="input-prepend">   
+    <span class="add-on"><i class="icon-user icon-grey"></i></span>
+    <!--<input class="span2" id="inputIcon" type="text">-->
+    {{ form.username }}
+    </div>
+    </div>
+    
+    <label class="control-label" for="inputIcon">Lösenord</label>
+    
+    <div class="controls">
+    <div class="input-prepend">   
+    <span class="add-on"><i class="icon-lock icon-grey"></i></span>
+    <!--<input class="span2" id="inputIcon" type="text">-->        
+    {{ form.password }}
+    </div>
+    </div>
+</div>
+<!--<p><a href="{% url auth_password_reset %}">Forgot</a> your password?  <a href="{% url registration_register %}">Need an account</a>?</p>
+-->
+<input type="submit" value="Logga in" class="btn btn-warning" />
+<input type="hidden" name="next" value="{{ next }}" />
+
+{% if form.errors %}
+<p class="error-message">Ditt användarnamn och lösenord stämde inte överens. Försök igen.</p>
+{% endif %}
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "registration/registration_base.html" %}
+{% block title %}Utloggad{% endblock %}
+{% block body %}
+
+<span> Du är nu utloggad! </span>
+
+<br/><br/>
+
+För att logga in igen, klicka <a href={% url auth_login %}> här</a>.
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="company">
+        <h2>{{ company.name }}</h2>
+        <form action="/company/{{ company.id }}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <table>
+                {{ companyform.as_table }}
+            </table><br>
+            <button type="submit" class="btn btn-primary">KLICKA PA MIG</button>
+            <button type="reset" class="btn btn-secondary">Ångra ändringar</button>
+        </form><br/><br/>
+
+        {% if contactperson_list %}
+
+
+                <div class="">
+                    <h2>Företagskontakter</h2>
+                    <hr>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <td>Namn</td><td>Titel</td><td>Telefonnummer</td><td>Email</td><td>Beskrivning</td>
+                            </tr>
+                        </thead>
+                    {% for person in contactperson_list %}
+                        <tbody>
+                            <tr>
+                                <td>{{ person.first_name }} {{ person.last_name }}</td>
+                                <td>{{ person.title }}</td>
+                                <td>{{ person.phone_number }}</td>
+                                <td>{{ person.email }}</td>
+                                <td>{{ person.description }}</td>
+                            </tr>
+                        </tbody>
+                    {% endfor %}
+                    </table>
+                </div>
+
+
+        {% else %}
+            <p>Inga kontaktpersoner kopplade till företaget.</p>
+        {% endif %}
+    </div>
+{% endblock %}

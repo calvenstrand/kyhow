@@ -1,0 +1,13 @@
+{% extends 'login/index.html'%}
+
+{% block content%}
+<div class="company">
+    <form action="." method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="text" value="user">            
+        <input type="password" value="password">
+        <input type="submit" value="login">
+    </form>
+</div>
+{% endblock %}

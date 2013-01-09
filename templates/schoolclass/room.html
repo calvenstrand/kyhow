@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+
+{% block headermeny %}
+    <li class="active">Klasser</li>
+{% endblock %}
+
+
+{% block content %}
+<br/>Nu visas: <b>{{ wanted_course.name }}</b><br/>
+    Visa kurs i overview:
+
+    <select id="course-select">
+        {% for course in courses %}
+            <option value="{{ course.id }}">{{ course.name }}</option>
+        {% endfor %}
+
+    </select>
+    <button id="course-picker" class="btn btn-primary">Visa kurs i overview</button>
+
+    {% for education in education %}
+        <h1>{{ education.name }}</h1>
+        {% for classs in class %}
+            {% if classs.education_id.name == education.name %}
+                <!-- RASMUS POPUP-->
+
+
+                <div id="schoolclass{{ classs.id }}" class="modal hide fade" tabindex="-1" role="dialog"
+                     aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h3 id="myModalLabel">Inställningar för {{ classs.name }}</h3>
+                    </div>
+                    <div class="modal-body">
+                        Lägg till klass på kurs
+                        <label for="class">Klass</label>
+                        <select id="classSelect" name="class">
+                            <option value="{{ classs.id }}">{{ classs.name }}</option>
+                        </select>
+                        <label for="course">Kurs</label>
+                        <select id="courseSelect" name="course">
+                            {% for course in courses %}
+                                <option value="{{ course.id }}">{{ course.name }}</option>
+                            {% endfor %}
+
+
+                        </select><br/>
+
+                        <button id="connect" class="btn btn-primary connecter">Koppla klass till kurs</button>
+
+
+                    </div>
+
+
+                    <div class="modal-footer">
+                        <button class="btn" data-dismiss="modal" aria-hidden="true">Stäng</button>
+
+
+                    </div>
+                </div>
+                <!-- SLUT RASMUS POPUP-->
+
+                <div class="row-fluid sortable">
+                    <div class="box span12">
+                        <div class="box-header" data-original-title>
+                            <h2><i class="icon-user"></i><span class="break"></span>{{ classs.name }}</h2>
+
+                            <div class="box-icon">
+                                <a href="#schoolclass{{ classs.id }}" class="btn-setting" role="button"
+                                   data-toggle="modal"><i class="icon-wrench"></i></a>
+                                <a href="#" class="btn-minimize"><i class="icon-chevron-down"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="box-content">
+                            <table class="table table-striped table-bordered bootstrap-datatable datatable">
+                                <thead>
+                                <tr>
+                                    <th>Användarnamn</th>
+                                    <th>Status - {{ wanted_course.name }}</th>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+                                {% for student in studentNames %}
+                                    {% if classs.name == student.schoolclass_id.name %}
+                                        <tr>
+                                            <td width="30%"><a href="/student/{{ student.id }}/">{{ student.name }}</a>
+                                            </td>
+
+                                            <td class="center">
+                                                {% for participate_object in participates %}
+                                                    {% if participate_object.student_id == student and participate_object.course_id == wanted_course %}
+                                                        {% for step in participate_step %}
+                                                            {% if participate_object == step.participate %}
+                                                                {% if step.done %}
+                                                                    <span id="{{ step.id }}"
+                                                                          class="label label-success cursor-fix">
+                                                                {% else %}
+                                                                    <span id="{{ step.id }}"
+                                                                          class="label label-important cursor-fix">
+                                                                {% endif %}
+
+                                                            {{ step.name }}
+                                                            </span>
+                                                            {% endif %}
+
+                                                        {% endfor %}
+
+
+
+
+                                                    {% endif %}
+                                                {% endfor %}
+
+                                            </td>
+                                        </tr>
+                                    {% endif %}
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!--/span-->
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+{% endblock %}
+{% block scripts %}
+    <script src="/static/js/schoolclass/schoolclass.js"></script>
+{% endblock %}

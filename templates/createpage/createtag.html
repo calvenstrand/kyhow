@@ -1,0 +1,21 @@
+{% extends "createpage/createpage.html" %}
+
+{% block headermeny %}
+<li><a href="/createpage/">Skapa</a> <span class="divider">/</span></li>
+<li class="active">Tagg</li>
+{% endblock %}
+
+{% block form %}
+
+<div>
+    <form action="/createpage/createtag" method="post">{% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Lägg till" class="btn"/>
+    </form>
+</div>
+
+
+
+{% endblock %}
+
+
