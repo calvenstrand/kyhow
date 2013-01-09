@@ -31,5 +31,5 @@ $(function () {
     $("#createtag").click(function () {
         window.location.href = "/createpage/createtag";
     });
-
+    
 });

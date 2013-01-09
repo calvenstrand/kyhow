@@ -50,3 +50,7 @@ $('.label').click(function(){
     notifys.notify(3); //Visa vilken kurs man läser
 
 });
+
+  $("#course-creater").click(function () {
+        window.location.href = "/createpage/createcourse";
+    });

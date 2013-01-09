@@ -32,7 +32,6 @@
 
 
             <button class="btn" id="edit" style="display:block">Redigera</button>
-            <button class="btn" id="create" style="display:block"><a href="{% url CreateNewCompany %}">skapa nya företag kontakt</a></button>
             <button class="btn btn-primary" id="save" type="submit" style="display:none;float:left;">Spara</button>
             <button class="btn" id="cancel" type="reset" style="display:none;float:left;margin-left:5px;">Avbryt</button>
 
@@ -94,6 +93,7 @@
                             </tr>
                         </tbody>
                     {% endfor %}
+                    <br><button class="btn btn-primary" id="create" style="display:block">skapa nya företagkontakt</a></button></br>
                     </table>
                     
             <button class="btn" id="edit" style="display:block">Redigera</button>
@@ -127,6 +127,7 @@
 
         {% else %}
             <p>Inga kontaktpersoner kopplade till företaget.</p>
+            <br><button class="btn btn-primary" id="create" style="display:block">Skapa nya företagkontakt</a></button></br>
         {% endif %}
     </div>
 {% endblock %}
