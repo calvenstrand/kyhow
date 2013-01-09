@@ -1,6 +1,7 @@
+
 $(function () {
     // do stuff after DOM has loaded
-    $('.box-content').hide();
+    
 
     $('.connecter').click(function(){
         var idz = $(this).parents().parents().attr('id');
