@@ -15,7 +15,7 @@ $(function () {
     });
 
 
-});
+
 
 //dj mouse ajax for clicking steps
 $('.label').click(function(){
@@ -44,7 +44,8 @@ $('.label').click(function(){
         window.location.href='/schoolclass/'+courseid+'/';
     });
 
-
+});
 
     notifys.notify(3); //Visa vilken kurs man läser
+
 });
