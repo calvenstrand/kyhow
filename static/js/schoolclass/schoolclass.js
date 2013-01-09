@@ -37,14 +37,14 @@ $('.label').click(function(){
             notifys.notify(4); //There was an error, throw error notification!
         });
 
-
+});
     $('#course-picker').click(function(){
         var courseid = $('#course-select').val();
         console.log(courseid);
         window.location.href='/schoolclass/'+courseid+'/';
     });
 
-});
+
 
     notifys.notify(3); //Visa vilken kurs man läser
 
