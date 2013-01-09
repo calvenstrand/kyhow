@@ -16,11 +16,9 @@ $(document).ready(function() {
      text: 'This is an example of the default config, and will fade out after five seconds.'
      });
 
-
      */
 
     //Slut notificationaktiverare
-
 
     /* DJ MUS AJAX */
     $.ajaxSetup({
@@ -47,9 +45,7 @@ $(document).ready(function() {
         }
     });
 
-
     /*END  DJ MUS AJAX */
-
 
     /* ---------- Datable ---------- */
     $('.datatable').dataTable({
@@ -69,7 +65,4 @@ $(document).ready(function() {
         e.preventDefault();
         $('#myModal').modal('show');
     });
-
-    $('.box-content').hide();
-
 } );
