@@ -12,10 +12,19 @@
 .ui-notify-cross:hover { color:#ffffab }
 .ui-notify-cross:active { position:relative; top:1px }
 .notify-green{
-    background: #adff2f;
+    background: #32cd32;
 
 }
 .notify-green h1{
-    color: #000000;
+    color: #ffffff;
+
+}
+
+.notify-red{
+    background: red;
+
+}
+.notify-red h1{
+    color: #ffffff;
 
 }

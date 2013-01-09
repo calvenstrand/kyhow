@@ -119,6 +119,11 @@
                         title: 'Visar kurs: '+ $('.content').children('b').first().text() +'!',
                         text: ''
                     });
+                }else if(number === 0){
+                    $("#container").notify("create" ,"notify-red", {
+                        title: 'Formulär kunde inte sparas!',
+                        text: ''
+                    });
                 }
             }
         }
@@ -155,9 +160,15 @@
             <!-- ... you get the idea ... -->
         </div>
 
+        <div id="notify-red" class="notify-red">
+            <a class="ui-notify-cross ui-notify-close" href="#">x</a>
+            <h1>#{title}</h1>
+            <!-- ... you get the idea ... -->
+        </div>
+
     </div>
 
-    {% if answer > 0  %}
+    {% if answer >= 0  %}
 
         <script>
 
