@@ -6,6 +6,7 @@ $('#editCompanyForm').find(':input').each(function () {
 })
 
 $('#edit').removeAttr('disabled');
+$('#create').removeAttr('disabled');
 
 $('#edit').click(function (e) {
     e.preventDefault();
