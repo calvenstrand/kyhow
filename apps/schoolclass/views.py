@@ -27,6 +27,9 @@ def school_class(request):
     END new things
     """
 
+    if 'latestcourse' not in request.session:
+        request.session['latestcourse'] = getWantedCourse.name
+
 
     return render_to_response("schoolclass/room.html",
         {'studentNames':student_name
@@ -82,6 +85,7 @@ def school_class_by_course(request, course_id):
     """
     END new things
     """
+
     if 'latestcourse' not in request.session:
         request.session['latestcourse'] = getWantedCourse.name
         answer=3
@@ -102,7 +106,7 @@ def school_class_by_course(request, course_id):
 
 
             else:
-                answer=-1
+                answer = answer
 
         else:
             answer=-1
