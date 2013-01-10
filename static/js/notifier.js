@@ -14,10 +14,11 @@ var notifys = {
             $("#container").notify("create", "notify-green" , {
                 title: 'Inlämningsstatusen förändrades utan fel!',
                 text: ''
-            });
+            },
+                {expires: 750,});
         }else if(number === 3){
             $("#container").notify("create" , {
-                title: 'Visar kurs: '+ $('.content').children('b').first().text() +'!',
+                title: 'Visar nu kurs: '+ $('.content').children('b').first().text() +'!',
                 text: ''
             });
         }else if(number === 0){

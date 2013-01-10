@@ -80,11 +80,33 @@ def school_class_by_course(request, course_id):
     """
     END new things
     """
+    if 'latestcourse' not in request.session:
+        request.session['latestcourse'] = ''
+
+
     if 'answer' in request.GET:
         answer=request.GET['answer']
+        if answer=='3':
+
+            newanswer = getWantedCourse.name
+
+            if request.session['latestcourse'] == newanswer:
+                answer=-1
+                lolos='ha'
+            else:
+                request.session['latestcourse'] = newanswer
+                answer=3
+                lolos='ho'
+
+        else:
+            answer=-1
 
     else:
         answer=-1
+
+
+
+
 
     return render_to_response("schoolclass/room.html",
         {'studentNames':student_name
@@ -95,6 +117,7 @@ def school_class_by_course(request, course_id):
             ,'participates':participateObjects
             ,'participate_step':participate_step
             ,'answer':answer
+            ,'lolos':lolos
 
         },context_instance=RequestContext(request))
 
