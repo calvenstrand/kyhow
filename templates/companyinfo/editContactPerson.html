@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block headermeny %}
+<li class="active">Redigera Kontakt Person</li>
+{% endblock %}
+
+{% block content %}
+    
+    <div>
+        <form action="{% url editContactPerson Contact_person.id %}" method="post">{% csrf_token %}
+            {{ Contact_personForm.as_p }}
+            <input type="submit" value="Redigera" class="btn"/>
+        </form>
+    </div>
+    
+    
+{% endblock %}

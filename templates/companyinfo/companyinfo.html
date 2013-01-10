@@ -55,15 +55,16 @@
                             <td>{{ person.phone_number }}</td>
                             <td>{{ person.email }}</td>
                             <td>{{ person.description }}</td>
+                            <td><a href = "{% url editContactPerson person.id %}">Redigera</href></td>
                         </tr>
                     </tbody>
                 {% endfor %}
-		<br><button class="btn" id="create" style="display:block"><a href="{% url CreateNewCompany %}">skapa nya företag kontakt</a></button></br>
+		<!--<br><button class="btn" id="create" style="display:block"><a href="{% url CreateNewCompany %}">skapa nya företag kontakt</a></button></br>-->
                 </table>
             </div>
         {% else %}
             <p>Inga kontaktpersoner kopplade till företaget.</p>
-	    <br><button class="btn" id="create" style="display:block"><a href="{% url CreateNewCompany %}">skapa nya företag kontakt</a></button></br>
+	    <!--<br><button class="btn" id="create" style="display:block"><a href="{% url CreateNewCompany %}">skapa nya företag kontakt</a></button></br>-->
         {% endif %}
         
         <br>
@@ -86,7 +87,7 @@
                             <td>{{ Participate.contact_person_id.first_name }} {{ Participate.contact_person_id.last_name }}</td>
                             
                         </tr>
-                        {% endif %}
+                        
                     </tbody>
                 {% endfor %}
                 </table>
