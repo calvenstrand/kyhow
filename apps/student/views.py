@@ -18,10 +18,12 @@ def detailed_student(request, student_id):
 
     if request.method == 'POST':
         form = EditStudentForm(request.POST, instance=student or None)
+        answer = 0
         if form.is_valid():
             edit_form = form.save(commit=False)
             edit_form.save()
-            answer = 1;
+            answer = 1
+
         return render_to_response('student/detailed_student.html', {
             'companies': companies,
             'contact_persons': contact_persons,

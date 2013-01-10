@@ -58,10 +58,12 @@
                         </tr>
                     </tbody>
                 {% endfor %}
+		<br><button class="btn" id="create" style="display:block"><a href="{% url CreateNewCompany %}">skapa nya företag kontakt</a></button></br>
                 </table>
             </div>
         {% else %}
             <p>Inga kontaktpersoner kopplade till företaget.</p>
+	    <br><button class="btn" id="create" style="display:block"><a href="{% url CreateNewCompany %}">skapa nya företag kontakt</a></button></br>
         {% endif %}
         
         <br>
@@ -78,7 +80,6 @@
                     </thead>
                 {% for Participate in Participate_list %}
                     <tbody>
-                        <!--{% if Participate.company_id.id  == company.id %}-->
                         <tr>
                             <td><a href="/student/{{Participate.student_id.id}}">{{ Participate.student_id.name }}</a></td>
                             <td>{{ Participate.course_id.name }}</td>
@@ -93,7 +94,6 @@
         {% else %}
             <p>Inga Studenter har haft en kurs med företaget.</p>
         {% endif %}
-        
         
     </div>
 {% endblock %}

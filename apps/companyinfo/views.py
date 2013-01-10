@@ -19,14 +19,17 @@ def companyInfo(request, company_id):
     if request.method == "POST":
 
         form = CompanyForm(request.POST, instance=getCompany or None)
+        answer = 0
         if form.is_valid():
             cmodel = form.save()
             cmodel.save()
+            answer = 1
         return render_to_response('companyinfo/companyinfo.html',
             {'companyform': form
             ,'company': getCompany
             ,'contactperson_list': contactperson_list
             ,'Participate_list': Participate_list
+            ,'answer' : answer
             }
             , context_instance=RequestContext(request))
 
