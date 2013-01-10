@@ -8,6 +8,11 @@ $('#editCompanyForm').find(':input').each(function () {
 $('#edit').removeAttr('disabled');
 $('#create').removeAttr('disabled');
 
+$("#create").click(function () {
+        window.location.href = "/createpage/createcompany";
+    });
+
+
 $('#edit').click(function (e) {
     e.preventDefault();
     $('#editCompanyForm').find(':input').each(function() {

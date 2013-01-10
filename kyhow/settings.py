@@ -136,6 +136,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'south',
     'apps.createpage',
+    'apps.schoolclass',
     'registration',
     'apps.login',
 

@@ -16,7 +16,9 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^student/(?P<student_id>\d+)/$', 'apps.student.views.detailed_student'),
     url(r'company/$', 'apps.companylist.views.companyList'),
-    url(r'^company/(?P<company_id>\d+)$', 'apps.companyinfo.views.companyInfo'),    
+    url(r'contact_person/$', 'apps.companyinfo.views.companyContact'),
+    url(r'^company/(?P<company_id>\d+)$', 'apps.companyinfo.views.companyInfo'),
+    url(r'^contact_person/(?P<contact_person_id>\d+)$', 'apps.companyinfo.views.companyContact'),  
     url(r'^createpage/createschoolclass', 'apps.createpage.views.createschoolclass'),
     url(r'^createpage/createcompany', 'apps.createpage.views.createcompany'),
     url(r'^createpage/createcontact_person', 'apps.createpage.views.createcontact_person'),
@@ -34,7 +36,7 @@ urlpatterns = patterns('',
     url(r'^changestep/(?P<participate_step_id>\d+)/$', 'apps.student.views.change_step_value'),
     url(r'^changecompany/(?P<participate_id>\d+)/(?P<company_id>\d+)/$', 'apps.student.views.change_participate_company'),
     url(r'^changecontactperson/(?P<participate_id>\d+)/(?P<contact_person_id>\d+)/$', 'apps.student.views.change_participate_contact_person'),
-    url(r'^createpage/createcompany', 'apps.createpage.views.createcompany', name='CreateNewCompany'),
+   
 )
 
 urlpatterns += staticfiles_urlpatterns()

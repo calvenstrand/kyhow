@@ -36,6 +36,10 @@
             <button class="btn" id="cancel" type="reset" style="display:none;float:left;margin-left:5px;">Avbryt</button>
 
         </form><br/><br/>
+        
+        <form id="editCompanyForm" action="/contact_person/{{ contact_person.id }}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+        
 
         {% if contactperson_list %}
 
@@ -43,6 +47,35 @@
                 <div class="">
                     <h2>Företagskontakter</h2>
                     <hr>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                          <table>
+                {% for field in companycontactform %}
+                    <tr>
+                        {% if field.label == 'First name' %}
+                            <th>{{ field.person.first_name }}</th>
+                            <td id="firstnamelLink"><a href='{{ field.value }}'>{{ field.value }}</a></td>
+                            <td id="firstnameEdit" style="display:none;">{{ field }}</td>
+                        {% elif field.label == 'Last name' %}
+                            <th>{{ field.label_tag }}</th>
+                            <td id="lastnameLink"><a href='{{ field.value }}'>{{ field.value }}</a></td>
+                            <td id="lastnameeEdit" style="display:none;">{{ field }}</td>
+                        {% else %}
+                            <th>{{ field.label_tag }}</th>
+                            <td>{{ field }}</td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+            </table><br>
+                        
+                        
+                        
                     <table class="table table-bordered">
                         <thead>
                             <tr>
@@ -60,8 +93,13 @@
                             </tr>
                         </tbody>
                     {% endfor %}
-                    <br><button class="btn" id="create" style="display:block"><a href="{% url CreateNewCompany %}">skapa nya företag kontakt</a></button></br>
+                    <br><button class="btn btn-primary" id="create" style="display:block">skapa nya företagkontakt</a></button></br>
                     </table>
+                    
+            <button class="btn" id="edit" style="display:block">Redigera</button>
+            <button class="btn btn-primary" id="save" type="submit" style="display:none;float:left;">Spara</button>
+            <button class="btn" id="cancel" type="reset" style="display:none;float:left;margin-left:5px;"
+        </form>
                     
                     <h2>Studenter som jobbat med {{company.name}}</h2>
                     <hr>
@@ -89,7 +127,7 @@
 
         {% else %}
             <p>Inga kontaktpersoner kopplade till företaget.</p>
-            <br><button class="btn" id="create" style="display:block"><a href="{% url CreateNewCompany %}">skapa nya företag kontakt</a></button></br>
+            <br><button class="btn btn-primary" id="create" style="display:block">Skapa nya företagkontakt</a></button></br>
         {% endif %}
     </div>
 {% endblock %}

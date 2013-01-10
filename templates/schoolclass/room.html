@@ -13,8 +13,13 @@
         {% endfor %}
 
     </select>
-    <button id="course-picker" class="btn btn-primary">Visa kurs i overview</button>
-
+    
+        <div class="btn-group">
+            <button id="course-picker" class="btn btn-primary">Visa kurs i overview</button>
+            <button id="course-creater" class="btn btn-primary">Skapa nya kurs</button>
+        </div>
+  
+    
     {% for education in education %}
         <h1>{{ education.name }}</h1>
         {% for classs in class %}
