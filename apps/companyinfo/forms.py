@@ -1,6 +1,7 @@
 #encoding=utf-8
 from django.forms import ModelForm, Textarea, forms
-from apps.createpage.models import Company, Tag
+from apps.createpage.models import Company, Tag, Contact_person
+
 class CompanyForm(ModelForm):
     #Rewriting the labels to swedish
     def __init__(self, *args, **kwargs):
@@ -23,5 +24,18 @@ class CompanyForm(ModelForm):
         widgets = {
             'description': Textarea(attrs={'cols': 40, 'rows': 5, 'class': 'descr'}),
             }
-
-
+        
+class EditCompanyForm(ModelForm):
+    #Rewriting the labels to swedish
+    def __init__(self, *args, **kwargs):
+        super(EditCompanyForm, self).__init__(*args, **kwargs)
+        self.fields['name'].label = 'Namn'
+        self.fields['titel'].label = 'Titel'
+        self.fields['phonenumber'].label = 'Telefonnummer'
+        self.fields['mail'].label = 'Email'
+        
+        
+    #Exclude id and change tag of description
+    class Meta:
+        model =  Contact_person
+        exclude = ('id')

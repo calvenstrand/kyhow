@@ -1,4 +1,4 @@
-
+//Notifys is a helperfunction for showing notifications, just follow the pattern
 var notifys = {
     init : function( options ) {  },
     show : function( options ) {  },
@@ -14,10 +14,11 @@ var notifys = {
             $("#container").notify("create", "notify-green" , {
                 title: 'Inlämningsstatusen förändrades utan fel!',
                 text: ''
-            });
+            },
+                {expires: 750,});
         }else if(number === 3){
             $("#container").notify("create" , {
-                title: 'Visar kurs: '+ $('.content').children('b').first().text() +'!',
+                title: 'Visar nu kurs: '+ $('.content').children('b').first().text() +'!',
                 text: ''
             });
         }else if(number === 0){
@@ -34,12 +35,16 @@ var notifys = {
             $("#container").notify("create" ,"notify-red", {
                 title: 'Du måste fylla i ett namn!',
             });
-        }
+        }else if(number === 6){
+            $("#container").notify("create" ,"notify-green", {
+                title: 'Kopplingen lyckades!',
+            });
+}
     },
 };
 
 
-
+    //Put it in hiding on the base.html page for the notifications to show up later on
     $('#notifydivs').html('<div id="container" style="display:none">'
         +'<div id="basic-template">'
         +'<a class="ui-notify-cross ui-notify-close" href="#">x</a>'
@@ -60,5 +65,3 @@ var notifys = {
         +''
         //End of container
         +'</div>');
-$(function () {
-});

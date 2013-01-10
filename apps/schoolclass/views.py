@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required
 
 
 
+
 @login_required
 def school_class(request):
     schoolclass_id = Schoolclass.objects.all().order_by('name')
@@ -26,6 +27,10 @@ def school_class(request):
     END new things
     """
 
+    if 'latestcourse' not in request.session:
+        request.session['latestcourse'] = getWantedCourse.name
+
+
     return render_to_response("schoolclass/room.html",
         {'studentNames':student_name
             , 'class':schoolclass_id
@@ -34,13 +39,17 @@ def school_class(request):
             ,'wanted_course':getWantedCourse
             ,'participates':participateObjects
             ,'participate_step':participate_step
+
         },context_instance=RequestContext(request))
 
 
-
+@login_required
 def make_schoolclass_participate(request, class_id, course_id):
+    #Get the selected schoolclass
     schoolclass = get_object_or_404(Schoolclass, pk=class_id)
+    #Get the selected course
     course = get_object_or_404(Course, pk=course_id)
+    #Get all students of the class
     student_name = Student.objects.filter(schoolclass_id = schoolclass).order_by('name')
 
 
@@ -56,6 +65,7 @@ def make_schoolclass_participate(request, class_id, course_id):
         ####MIGHT NEED TESTING WHEN DEPLOYED IF IT CAN CRASH
 
     return redirect('apps.schoolclass.views.school_class')
+
 
 @login_required
 def school_class_by_course(request, course_id):
@@ -76,6 +86,35 @@ def school_class_by_course(request, course_id):
     END new things
     """
 
+    if 'latestcourse' not in request.session:
+        request.session['latestcourse'] = getWantedCourse.name
+        answer=3
+    else:
+
+        if 'answer' in request.GET:
+            answer=request.GET['answer']
+            if answer=='3':
+
+                newanswer = getWantedCourse.name
+
+                if request.session['latestcourse'] == newanswer:
+                    answer=-1
+
+                else:
+                    request.session['latestcourse'] = newanswer
+                    answer=3
+
+
+            else:
+                answer = answer
+
+        else:
+            answer=-1
+
+
+
+
+
     return render_to_response("schoolclass/room.html",
         {'studentNames':student_name
             , 'class':schoolclass_id
@@ -84,6 +123,9 @@ def school_class_by_course(request, course_id):
             ,'wanted_course':getWantedCourse
             ,'participates':participateObjects
             ,'participate_step':participate_step
+            ,'answer':answer
+
+
         },context_instance=RequestContext(request))
 
 

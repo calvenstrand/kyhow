@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 from django.template import RequestContext
 from apps.createpage.models import Company, Contact_person, Participate
-from apps.companyinfo.forms import CompanyForm
+from apps.companyinfo.forms import CompanyForm, EditCompanyForm
 from django.contrib.auth.decorators import login_required
 from apps.createpage.forms import Contact_personForm
 
