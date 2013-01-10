@@ -27,6 +27,7 @@ def school_class(request):
     END new things
     """
 
+
     return render_to_response("schoolclass/room.html",
         {'studentNames':student_name
             , 'class':schoolclass_id
@@ -35,6 +36,7 @@ def school_class(request):
             ,'wanted_course':getWantedCourse
             ,'participates':participateObjects
             ,'participate_step':participate_step
+
         },context_instance=RequestContext(request))
 
 
@@ -81,28 +83,29 @@ def school_class_by_course(request, course_id):
     END new things
     """
     if 'latestcourse' not in request.session:
-        request.session['latestcourse'] = ''
+        request.session['latestcourse'] = getWantedCourse.name
+        answer=3
+    else:
+
+        if 'answer' in request.GET:
+            answer=request.GET['answer']
+            if answer=='3':
+
+                newanswer = getWantedCourse.name
+
+                if request.session['latestcourse'] == newanswer:
+                    answer=-1
+
+                else:
+                    request.session['latestcourse'] = newanswer
+                    answer=3
 
 
-    if 'answer' in request.GET:
-        answer=request.GET['answer']
-        if answer=='3':
-
-            newanswer = getWantedCourse.name
-
-            if request.session['latestcourse'] == newanswer:
-                answer=-1
-                lolos='ha'
             else:
-                request.session['latestcourse'] = newanswer
-                answer=3
-                lolos='ho'
+                answer=-1
 
         else:
             answer=-1
-
-    else:
-        answer=-1
 
 
 
@@ -117,7 +120,7 @@ def school_class_by_course(request, course_id):
             ,'participates':participateObjects
             ,'participate_step':participate_step
             ,'answer':answer
-            ,'lolos':lolos
+
 
         },context_instance=RequestContext(request))
 
