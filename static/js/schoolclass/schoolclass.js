@@ -4,9 +4,9 @@ $(function () {
     $('.connecter').click(function () {
         var idz = $(this).parents().parents().attr('id');
         console.log(idz);
-        var classVal = $('#classSelect').val();
-        var className = $('#classSelect').children('option').text();
-        var courseVal = $('#courseSelect').val();
+        var classVal = $(this).siblings('#classSelect').val();
+        var className = $(this).siblings('#classSelect').children('option').text();
+        var courseVal = $(this).siblings('#courseSelect').val();
         //its called mus right now and should be changed to something better, but doesnt really matter, dependant on urls.py
         $.post('/mus/' + classVal + '/' + courseVal + '/', function (data) {
             $('#' + idz).modal('hide')
