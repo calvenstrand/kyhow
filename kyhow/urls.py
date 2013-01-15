@@ -34,8 +34,8 @@ urlpatterns = patterns('',
     url(r'^changestep/(?P<participate_step_id>\d+)/$', 'apps.student.views.change_step_value'),
     url(r'^changecompany/(?P<participate_id>\d+)/(?P<company_id>\d+)/$', 'apps.student.views.change_participate_company'),
     url(r'^changecontactperson/(?P<participate_id>\d+)/(?P<contact_person_id>\d+)/$', 'apps.student.views.change_participate_contact_person'),
-   
-    url(r'^edit/contactperson/(?P<contact_person_id>\d+)$', 'apps.companyinfo.views.editContactPerson', name='editContactPerson'), 
+    url(r'^edit/contactperson/(?P<contact_person_id>\d+)$', 'apps.companyinfo.views.editContactPerson', name='editContactPerson'),
+    url(r'^edit/participate/(?P<participate_id>\d+)$', 'apps.companyinfo.views.editParticipate', name='editParticipate'),
 )
 
 urlpatterns += staticfiles_urlpatterns()

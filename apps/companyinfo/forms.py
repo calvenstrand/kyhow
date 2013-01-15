@@ -1,6 +1,6 @@
 #encoding=utf-8
-from django.forms import ModelForm, Textarea, forms
-from apps.createpage.models import Company, Tag, Contact_person
+from django.forms import ModelForm, Textarea, forms, DateField
+from apps.createpage.models import Company, Tag, Contact_person, Participate
 
 class CompanyForm(ModelForm):
     #Rewriting the labels to swedish
@@ -39,3 +39,22 @@ class EditCompanyForm(ModelForm):
     class Meta:
         model =  Contact_person
         exclude = ('id')
+
+
+class ParticipateForm(ModelForm):
+    #Rewriting the labels to swedish
+    def __init__(self, *args, **kwargs):
+        super(ParticipateForm, self).__init__(*args, **kwargs)
+        self.fields['start_date'].label = 'Start datum'
+        self.fields['start_date'].help_text = 'Ex: 2006-10-25'
+        self.fields['end_date'].label = 'Slut datum'
+        self.fields['end_date'].help_text = 'Ex: 2006-10-25'
+        self.fields['job_bool'].label = 'Jobb'
+        widgets = {
+            'start_date': DateField(),
+        }
+    
+    
+    class Meta:
+        model = Participate
+        fields = ('start_date', 'end_date', 'job_bool')

@@ -84,7 +84,10 @@ class Participate(models.Model):
     contact_person_id = models.ForeignKey('Contact_person', blank=True, null=True)
     company_id = models.ForeignKey('Company', blank=True, null=True)
     student_id = models.ForeignKey('Student', blank=True)
-
+    start_date = models.DateField(blank=True, null=True)
+    end_date = models.DateField(blank=True, null=True)
+    job_bool = models.BooleanField(default = False)
+    
 class Participate_Step(models.Model):
     name = models.CharField(max_length=60)
     description = models.CharField(max_length=5000, blank=True)

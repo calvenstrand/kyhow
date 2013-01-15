@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block headermeny %}
+<li class="active">Redigera Start datum, Slut datum och Job</li>
+{% endblock %}
+
+{% block content %}
+    
+    <div>
+        <form action="{% url editParticipate getParticipate.id %}" method="post">{% csrf_token %}
+            {{ participateForm.as_p }}
+            <input type="submit" value="Redigera" class="btn"/>
+        </form>
+    </div>
+    
+    
+{% endblock %}

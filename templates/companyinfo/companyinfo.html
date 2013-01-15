@@ -48,7 +48,7 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <td>Namn</td><td>Titel</td><td>Telefonnummer</td><td>Email</td><td>Beskrivning</td>
+                            <td>Namn</td><td>Titel</td><td>Telefonnummer</td><td>Email</td><td>Beskrivning</td><td>Redigera</td>
                         </tr>
                     </thead>
                 {% for person in contactperson_list %}
@@ -80,19 +80,23 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <td>Namn</td><td>Kurs</td><td>Kontaktperson</td>
+                            <td>Namn</td><td>Kurs</td><td>Kontaktperson</td><td>Start datum</td><td>Slut datum</td><td>Jobb</td><td>Redigera</td>
                         </tr>
                     </thead>
                 {% for Participate in Participate_list %}
+                    
                     <tbody>
                         <tr>
                             <td><a href="/student/{{Participate.student_id.id}}">{{ Participate.student_id.name }}</a></td>
                             <td>{{ Participate.course_id.name }}</td>
                             <td>{{ Participate.contact_person_id.first_name }} {{ Participate.contact_person_id.last_name }}</td>
-                            
+                            <td>{{ Participate.start_date }}</td>
+                            <td>{{ Participate.end_date }}</td>
+                            <td>{% if Participate.job_bool %} Ja {% else %} Nej {% endif %}</td>
+                            <td><a href = "{% url editParticipate Participate.id %}">Redigera</href></td>
                         </tr>
-                        
                     </tbody>
+                    
                 {% endfor %}
                 </table>
             </div>

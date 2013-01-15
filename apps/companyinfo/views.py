@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 from django.template import RequestContext
 from apps.createpage.models import Company, Contact_person, Participate
-from apps.companyinfo.forms import CompanyForm, EditCompanyForm
+from apps.companyinfo.forms import CompanyForm, EditCompanyForm, ParticipateForm
 from django.contrib.auth.decorators import login_required
 from apps.createpage.forms import Contact_personForm
 
@@ -17,7 +17,7 @@ def companyInfo(request, company_id):
     Participate_list = Participate.objects.filter(company_id=company_id)
     
     if request.method == "POST":
-
+        
         form = CompanyForm(request.POST, instance=getCompany or None)
         answer = 0
         if form.is_valid():
@@ -70,3 +70,32 @@ def editContactPerson(request, contact_person_id):
         'Contact_personForm': form,
         'Contact_person': getContactPerson,
     })
+
+@login_required
+def editParticipate(request, participate_id):
+    
+    getParticipate = get_object_or_404(Participate, pk=participate_id)
+    
+    if request.method == "POST":
+        form = ParticipateForm(request.POST, instance=getParticipate or None)
+        if form.is_valid():
+            cmodel = form.save()
+            cmodel.save()
+            
+            return redirect('apps.companyinfo.views.companyInfo', company_id=getParticipate.company_id.id)
+        
+        else:
+            return render(request, "companyinfo/editParticipate.html", {
+            'participateForm': form,
+            'getParticipate': getParticipate,
+            })
+    
+    else:
+        form = ParticipateForm(instance=getParticipate)
+        return render(request, "companyinfo/editParticipate.html", {
+        'participateForm': form,
+        'getParticipate': getParticipate,
+    })
+    
+    
+    
